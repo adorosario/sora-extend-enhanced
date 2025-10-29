@@ -1,10 +1,22 @@
-# Sora Extend
+# Sora Extend Enhanced
 
-[![Follow on X](https://img.shields.io/twitter/follow/mattshumer_?style=social)](https://x.com/mattshumer_) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mshumer/sora-extend/blob/main/Sora_Extend.ipynb)
+[![Original by Matt Shumer](https://img.shields.io/badge/Original-@mattshumer_-blue)](https://github.com/mshumer/sora-extend) [![Follow on X](https://img.shields.io/twitter/follow/mattshumer_?style=social)](https://x.com/mattshumer_) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mshumer/sora-extend/blob/main/Sora_Extend.ipynb)
 
-[Be the first to know when I publish new AI builds + demos!](https://tally.so/r/w2M17p)
+**Enhanced version with Docker support and CLI arguments for extended Sora 2 video generation.**
 
-**Seamlessly generate extended Sora 2 videos beyond OpenAI’s 12-second limit.**
+> **Credits:** This is an enhanced version of [sora-extend](https://github.com/mshumer/sora-extend) by [Matt Shumer](https://x.com/mattshumer_). All core video generation logic and AI planning approach belongs to the original author.
+
+## What's New in This Fork
+
+- ✅ **Docker Containerization**: Run with zero host dependencies
+- ✅ **CLI Arguments**: Command-line interface for headless operation
+- ✅ **Python Script**: Converted from Jupyter notebook for production use
+- ✅ **Better Configuration**: Comprehensive .env.example with documentation
+- ✅ **Safety Features**: Manual execution to prevent accidental API charges
+
+---
+
+**Seamlessly generate extended Sora 2 videos beyond OpenAI's 12-second limit.**
 
 OpenAI’s Sora video generation model currently restricts output to 12-second clips. By leveraging the final frame of each generation as context for the next, and intelligently breaking down your prompt into coherent segments that mesh well, Sora Extend enables the creation of high-quality, extended-duration videos with continuity.
 
@@ -97,6 +109,103 @@ Generated videos are saved to `./output/sora_ai_planned_chain/`:
 - `segment_01_last.jpg`, etc. - Final frames for continuity
 - `combined.mp4` - Final concatenated video
 
+---
+
+## CLI Usage (Headless Operation)
+
+The script now supports command-line arguments for headless operation and automation!
+
+### Quick Examples
+
+```bash
+# Basic: Override prompt (uses .env for other settings)
+docker exec sora-extend python src/sora_extend.py \
+  --prompt "Futuristic city tour with flying cars"
+
+# Custom segments and duration
+docker exec sora-extend python src/sora_extend.py \
+  --prompt "iPhone 19 product launch" \
+  --segments 5 \
+  --duration 8
+
+# Full custom configuration
+docker exec sora-extend python src/sora_extend.py \
+  --prompt "Cinematic gameplay footage" \
+  --segments 3 \
+  --duration 12 \
+  --output /app/output/custom_project \
+  --planner-model gpt-4o \
+  --sora-model sora-2-pro
+```
+
+### All Available Arguments
+
+**Primary Options:**
+- `-p, --prompt` - Base prompt for video generation
+- `-s, --segments` - Number of video segments to generate
+- `-d, --duration` - Duration per segment: 4, 8, or 12 seconds
+- `-o, --output` - Output directory path
+
+**API Configuration:**
+- `--api-key` - OpenAI API key (overrides .env)
+- `--api-base` - API base URL (default: https://api.openai.com/v1)
+
+**Model Configuration:**
+- `--planner-model` - AI planning model (default: gpt-5)
+- `--sora-model` - Sora variant: sora-2 or sora-2-pro
+- `--size` - Video resolution (default: 1280x720)
+
+**Advanced:**
+- `--work-dir` - Change working directory before execution
+- `--poll-interval` - Status polling interval in seconds
+- `--dry-run` - Preview configuration without generating
+- `--no-env` - Skip .env loading (CLI args only)
+- `-v, --verbose` - Enable verbose error output
+
+### Configuration Priority
+
+Settings are applied in this order (highest to lowest priority):
+1. **CLI arguments** (e.g., `--prompt "..."`)
+2. **Environment variables** (from `.env` file)
+3. **Default values** (hardcoded fallbacks)
+
+### Dry Run Mode
+
+Test your configuration without API calls:
+
+```bash
+docker exec sora-extend python src/sora_extend.py \
+  --prompt "Test prompt" \
+  --segments 3 \
+  --duration 12 \
+  --dry-run
+```
+
+Output:
+```
+======================================================================
+DRY RUN MODE - Configuration Preview
+======================================================================
+  Base Prompt: Test prompt
+  Number of Segments: 3
+  Duration per Segment: 12s
+  Total Duration: 36s
+  Output Directory: /app/output/sora_ai_planned_chain
+  Planner Model: gpt-5
+  Sora Model: sora-2
+  Video Size: 1280x720
+======================================================================
+```
+
+### Help
+
+View all options:
+```bash
+docker exec sora-extend python src/sora_extend.py --help
+```
+
+---
+
 ### Troubleshooting
 
 **Issue**: "OPENAI_API_KEY environment variable is required"
@@ -118,7 +227,36 @@ Generated videos are saved to `./output/sora_ai_planned_chain/`:
 
 ## Original Notebook Usage
 
-For the original Jupyter notebook experience, see [Sora_Extend.ipynb](Sora_Extend.ipynb).
+For the original Jupyter notebook experience, see [Sora_Extend.ipynb](Sora_Extend.ipynb) or try it in [Google Colab](https://colab.research.google.com/github/mshumer/sora-extend/blob/main/Sora_Extend.ipynb).
+
+---
+
+## Credits & License
+
+### Original Work
+
+This enhanced version is based on [sora-extend](https://github.com/mshumer/sora-extend) by **[Matt Shumer](https://x.com/mattshumer_)**.
+
+- All core video generation logic, AI planning approach, and prompt engineering belongs to the original author
+- Original repository: https://github.com/mshumer/sora-extend
+- Follow Matt on X: [@mattshumer_](https://x.com/mattshumer_)
+
+[Be the first to know when Matt publishes new AI builds + demos!](https://tally.so/r/w2M17p)
+
+### Enhancements
+
+This fork adds:
+- Docker containerization for zero-dependency execution
+- Command-line interface with argument support
+- Production-ready Python script conversion
+- Improved configuration management
+- Safety features (manual execution, no auto-run)
+
+Enhanced by: [@adorosario](https://github.com/adorosario)
+
+### License
+
+Please refer to the [original repository](https://github.com/mshumer/sora-extend) for license terms.
 
 ---
 

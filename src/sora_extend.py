@@ -10,6 +10,7 @@ import re
 import json
 import time
 import mimetypes
+import argparse
 from pathlib import Path
 from typing import Optional, List, Dict
 
@@ -19,40 +20,237 @@ from moviepy import VideoFileClip, concatenate_videoclips
 from openai import OpenAI
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
-load_dotenv()
+
+def parse_arguments():
+    """Parse command-line arguments with environment variable fallbacks."""
+    parser = argparse.ArgumentParser(
+        description='Sora 2 Extended Video Generation with AI Planning',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # Basic usage (uses .env for API key)
+  python src/sora_extend.py --prompt "Futuristic city tour" --segments 3
+
+  # Full custom configuration
+  python src/sora_extend.py \\
+    --prompt "iPhone 19 intro" \\
+    --segments 5 \\
+    --duration 8 \\
+    --output ./custom/path \\
+    --planner-model gpt-4o \\
+    --sora-model sora-2-pro
+
+  # Docker usage
+  docker exec sora-extend python src/sora_extend.py --prompt "..." --segments 2
+        """
+    )
+
+    # Primary arguments
+    parser.add_argument(
+        '-p', '--prompt',
+        dest='base_prompt',
+        help='Base prompt for video generation (required if not in .env)'
+    )
+
+    parser.add_argument(
+        '-s', '--segments',
+        dest='num_generations',
+        type=int,
+        help='Number of video segments to generate (default: from .env or 2)'
+    )
+
+    parser.add_argument(
+        '-d', '--duration',
+        dest='seconds_per_segment',
+        type=int,
+        choices=[4, 8, 12],
+        help='Duration per segment in seconds: 4, 8, or 12 (default: from .env or 8)'
+    )
+
+    parser.add_argument(
+        '-o', '--output',
+        dest='output_dir',
+        help='Output directory for generated videos (default: from .env or ./output/sora_ai_planned_chain)'
+    )
+
+    # API Configuration
+    api_group = parser.add_argument_group('API Configuration')
+    api_group.add_argument(
+        '--api-key',
+        dest='openai_api_key',
+        help='OpenAI API key (default: from .env or OPENAI_API_KEY env var)'
+    )
+
+    api_group.add_argument(
+        '--api-base',
+        dest='api_base',
+        help='OpenAI API base URL (default: https://api.openai.com/v1)'
+    )
+
+    # Model Configuration
+    model_group = parser.add_argument_group('Model Configuration')
+    model_group.add_argument(
+        '--planner-model',
+        dest='planner_model',
+        help='AI model for planning segments (default: from .env or gpt-5)'
+    )
+
+    model_group.add_argument(
+        '--sora-model',
+        dest='sora_model',
+        choices=['sora-2', 'sora-2-pro'],
+        help='Sora model variant (default: from .env or sora-2)'
+    )
+
+    model_group.add_argument(
+        '--size',
+        dest='size',
+        help='Video resolution, e.g., 1280x720, 1920x1080 (default: 1280x720)'
+    )
+
+    # Advanced Options
+    advanced_group = parser.add_argument_group('Advanced Options')
+    advanced_group.add_argument(
+        '--work-dir',
+        dest='work_dir',
+        help='Working directory for operations (changes cwd before execution)'
+    )
+
+    advanced_group.add_argument(
+        '--poll-interval',
+        dest='poll_interval_sec',
+        type=int,
+        help='Polling interval in seconds for job status (default: 2)'
+    )
+
+    advanced_group.add_argument(
+        '--no-env',
+        dest='skip_env',
+        action='store_true',
+        help='Skip loading .env file (use only CLI args and system env vars)'
+    )
+
+    advanced_group.add_argument(
+        '-v', '--verbose',
+        action='store_true',
+        help='Enable verbose output'
+    )
+
+    advanced_group.add_argument(
+        '--dry-run',
+        action='store_true',
+        help='Show configuration without generating videos'
+    )
+
+    return parser.parse_args()
+
+
+def get_config_value(arg_value, env_var_name, default=None, required=False):
+    """
+    Get configuration value with priority: CLI args > env vars > default
+
+    Args:
+        arg_value: Value from command-line argument
+        env_var_name: Environment variable name
+        default: Default value if not found
+        required: Raise error if not found
+
+    Returns:
+        Configuration value
+    """
+    value = arg_value or os.environ.get(env_var_name) or default
+
+    if required and not value:
+        raise ValueError(
+            f"{env_var_name} is required. "
+            f"Provide via --{env_var_name.lower().replace('_', '-')} argument or .env file"
+        )
+
+    return value
+
+
+# Load environment variables from .env file (unless --no-env is used)
+# This is called conditionally in main() now
 
 
 class SoraExtender:
     """Handles extended video generation using Sora 2 with AI-planned segments."""
 
-    def __init__(self):
-        """Initialize the Sora Extender with configuration from environment variables."""
-        # API Configuration
-        self.api_key = os.environ.get("OPENAI_API_KEY")
-        if not self.api_key:
-            raise ValueError("OPENAI_API_KEY environment variable is required")
+    def __init__(self, args=None):
+        """
+        Initialize the Sora Extender with configuration.
+        Priority: CLI arguments > environment variables > defaults
+
+        Args:
+            args: Optional argparse Namespace with command-line arguments
+        """
+        # API Configuration (with priority handling)
+        self.api_key = get_config_value(
+            args.openai_api_key if args else None,
+            "OPENAI_API_KEY",
+            required=True
+        )
 
         self.client = OpenAI(api_key=self.api_key)
-        self.api_base = os.environ.get("API_BASE", "https://api.openai.com/v1")
+
+        self.api_base = get_config_value(
+            args.api_base if args else None,
+            "API_BASE",
+            default="https://api.openai.com/v1"
+        )
+
         self.headers_auth = {"Authorization": f"Bearer {self.api_key}"}
 
         # Model Configuration
-        self.planner_model = os.environ.get("PLANNER_MODEL", "gpt-5")
-        self.sora_model = os.environ.get("SORA_MODEL", "sora-2")
-        self.size = os.environ.get("SIZE", "1280x720")
+        self.planner_model = get_config_value(
+            args.planner_model if args else None,
+            "PLANNER_MODEL",
+            default="gpt-5"
+        )
+
+        self.sora_model = get_config_value(
+            args.sora_model if args else None,
+            "SORA_MODEL",
+            default="sora-2"
+        )
+
+        self.size = get_config_value(
+            args.size if args else None,
+            "SIZE",
+            default="1280x720"
+        )
 
         # Generation Configuration
-        self.base_prompt = os.environ.get("BASE_PROMPT")
-        if not self.base_prompt:
-            raise ValueError("BASE_PROMPT environment variable is required")
+        self.base_prompt = get_config_value(
+            args.base_prompt if args else None,
+            "BASE_PROMPT",
+            required=True
+        )
 
-        self.seconds_per_segment = int(os.environ.get("SECONDS_PER_SEGMENT", "8"))
-        self.num_generations = int(os.environ.get("NUM_GENERATIONS", "2"))
-        self.poll_interval = int(os.environ.get("POLL_INTERVAL_SEC", "2"))
+        self.seconds_per_segment = int(get_config_value(
+            args.seconds_per_segment if args else None,
+            "SECONDS_PER_SEGMENT",
+            default="8"
+        ))
+
+        self.num_generations = int(get_config_value(
+            args.num_generations if args else None,
+            "NUM_GENERATIONS",
+            default="2"
+        ))
+
+        self.poll_interval = int(get_config_value(
+            args.poll_interval_sec if args else None,
+            "POLL_INTERVAL_SEC",
+            default="2"
+        ))
 
         # Output Configuration
-        output_dir = os.environ.get("OUTPUT_DIR", "/app/output/sora_ai_planned_chain")
+        output_dir = get_config_value(
+            args.output_dir if args else None,
+            "OUTPUT_DIR",
+            default="/app/output/sora_ai_planned_chain"
+        )
         self.out_dir = Path(output_dir)
         self.out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -504,14 +702,51 @@ Return exactly {self.num_generations} segments.
 
 
 def main():
-    """Main entry point."""
+    """Main entry point with CLI support."""
+    # Parse command-line arguments
+    args = parse_arguments()
+
+    # Load .env file unless --no-env is specified
+    if not args.skip_env:
+        load_dotenv()
+
+    # Handle work directory change
+    if args.work_dir:
+        os.chdir(args.work_dir)
+        print(f"Changed working directory to: {args.work_dir}\n")
+
     try:
-        extender = SoraExtender()
+        extender = SoraExtender(args)
+
+        # Dry run mode - show configuration without generating
+        if args.dry_run:
+            print("\n" + "="*70)
+            print("DRY RUN MODE - Configuration Preview")
+            print("="*70)
+            print(f"  Base Prompt: {extender.base_prompt}")
+            print(f"  Number of Segments: {extender.num_generations}")
+            print(f"  Duration per Segment: {extender.seconds_per_segment}s")
+            print(f"  Total Duration: {extender.num_generations * extender.seconds_per_segment}s")
+            print(f"  Output Directory: {extender.out_dir}")
+            print(f"  Planner Model: {extender.planner_model}")
+            print(f"  Sora Model: {extender.sora_model}")
+            print(f"  Video Size: {extender.size}")
+            print(f"  API Base: {extender.api_base}")
+            print("="*70)
+            print("\nNo videos will be generated in dry-run mode.")
+            print("Remove --dry-run flag to execute actual generation.")
+            return
+
+        # Run the video generation pipeline
         extender.run()
+
     except KeyboardInterrupt:
         print("\n\nInterrupted by user. Exiting...")
     except Exception as e:
         print(f"\nERROR: {e}")
+        if args.verbose:
+            import traceback
+            traceback.print_exc()
         raise
 
 
