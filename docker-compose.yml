@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  sora-extend:
+    build: .
+    container_name: sora-extend
+    env_file:
+      - .env
+    volumes:
+      # Mount output directory to host for persistent storage
+      - ./output:/app/output
+    environment:
+      # These can be overridden in .env file
+      - OUTPUT_DIR=/app/output/sora_ai_planned_chain
+      - POLL_INTERVAL_SEC=2
+      - API_BASE=https://api.openai.com/v1
+    restart: "no"

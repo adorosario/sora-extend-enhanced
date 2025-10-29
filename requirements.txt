@@ -1,0 +1,12 @@
+# Core dependencies
+openai>=1.0.0
+requests>=2.31.0
+
+# Video processing
+opencv-python-headless>=4.8.0
+imageio[ffmpeg]>=2.31.0
+imageio-ffmpeg>=0.4.9
+moviepy>=2.0.0
+
+# Utilities
+python-dotenv>=1.0.0
