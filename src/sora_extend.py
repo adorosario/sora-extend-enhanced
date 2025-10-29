@@ -13,12 +13,66 @@ import mimetypes
 import argparse
 from pathlib import Path
 from typing import Optional, List, Dict
+from functools import wraps
 
 import requests
 import cv2
 from moviepy import VideoFileClip, concatenate_videoclips
 from openai import OpenAI
 from dotenv import load_dotenv
+
+
+def retry_with_backoff(max_retries=5, initial_delay=2, backoff_factor=2, retryable_status_codes=(500, 502, 503, 504, 429)):
+    """
+    Decorator to retry function calls with exponential backoff on API errors.
+
+    Args:
+        max_retries: Maximum number of retry attempts
+        initial_delay: Initial delay in seconds before first retry
+        backoff_factor: Multiplier for delay between retries (exponential backoff)
+        retryable_status_codes: HTTP status codes that should trigger a retry
+    """
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            delay = initial_delay
+            last_exception = None
+
+            for attempt in range(max_retries + 1):
+                try:
+                    return func(*args, **kwargs)
+                except RuntimeError as e:
+                    # Check if this is an HTTP error we should retry
+                    error_msg = str(e)
+                    should_retry = False
+
+                    # Check for retryable status codes
+                    for code in retryable_status_codes:
+                        if f"HTTP {code}" in error_msg:
+                            should_retry = True
+                            break
+
+                    if not should_retry or attempt == max_retries:
+                        # Not a retryable error, or we've exhausted retries
+                        raise
+
+                    # Log retry attempt
+                    print(f"\n⚠️  API Error (attempt {attempt + 1}/{max_retries}): {error_msg.splitlines()[0]}")
+                    print(f"   Retrying in {delay} seconds...")
+
+                    time.sleep(delay)
+                    delay *= backoff_factor  # Exponential backoff
+                    last_exception = e
+                except Exception as e:
+                    # Non-RuntimeError exceptions are not retried
+                    raise
+
+            # If we get here, all retries failed
+            if last_exception:
+                raise last_exception
+
+        return wrapper
+    return decorator
 
 
 def parse_arguments():
@@ -423,6 +477,7 @@ Return exactly {self.num_generations} segments.
             body = resp.text
         return f"HTTP {resp.status_code} (request-id: {request_id})\n{body}"
 
+    @retry_with_backoff(max_retries=3, initial_delay=2, backoff_factor=2)
     def create_video(
         self,
         prompt: str,
@@ -430,7 +485,7 @@ Return exactly {self.num_generations} segments.
         input_reference: Optional[Path] = None
     ) -> Dict:
         """
-        Create a video generation job with Sora API.
+        Create a video generation job with Sora API (with automatic retries).
 
         Args:
             prompt: Video generation prompt
@@ -465,8 +520,9 @@ Return exactly {self.num_generations} segments.
 
         return resp.json()
 
+    @retry_with_backoff(max_retries=5, initial_delay=2, backoff_factor=2)
     def retrieve_video(self, video_id: str) -> Dict:
-        """Retrieve video job status."""
+        """Retrieve video job status with automatic retries on server errors."""
         url = f"{self.api_base}/videos/{video_id}"
         resp = requests.get(url, headers=self.headers_auth, timeout=60)
 
@@ -475,13 +531,14 @@ Return exactly {self.num_generations} segments.
 
         return resp.json()
 
+    @retry_with_backoff(max_retries=3, initial_delay=2, backoff_factor=2)
     def download_video_content(
         self,
         video_id: str,
         out_path: Path,
         variant: str = "video"
     ) -> Path:
-        """Download completed video content."""
+        """Download completed video content (with automatic retries)."""
         url = f"{self.api_base}/videos/{video_id}/content"
         params = {"variant": variant}
 
