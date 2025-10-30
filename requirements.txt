@@ -8,5 +8,14 @@ imageio[ffmpeg]>=2.31.0
 imageio-ffmpeg>=0.4.9
 moviepy>=2.0.0
 
+# Audio generation
+elevenlabs>=0.2.0
+
 # Utilities
 python-dotenv>=1.0.0
+
+# Testing and code quality
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-mock>=3.11.0
+ruff>=0.1.0
