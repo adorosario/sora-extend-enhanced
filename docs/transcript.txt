@@ -1,0 +1,1197 @@
+0:00
+Let's go to the gray area. Sure. Um your uh and I think there's an uh
+0:06
+allegation around LeBron James here. Not that LeBron James did anything, but LeBron James was going to be out of a game or he was potentially injured and
+0:13
+these injury reports come out early in the day and they get updated as you go and people take them into account when
+0:18
+they're betting on games obviously the handicappers and the people who do it professionally. So, what happened in one
+0:25
+of these cases allegedly is somebody told their friends, "Oh, I don't think LeBron's going to play tonight. He's he
+0:31
+tweaked his ankle." They tell their friends, they put action on the games, having that information an hour before
+0:38
+the lines change. Now, if they say, "Hey, LeBron's not playing tonight and he's LeBron in his prime," the odds in
+0:44
+the game would change dramatically. But if you get your bet in, you've got your bet locked in at that other bet. So,
+0:50
+is that illegal? Well, in this case, the injury status Jason was sold by
+0:55
+allegedly um his friend and former LA Lakers coach Damon Jones. Uh Jones was also an ex Cleveland Cavs player and uh
+1:04
+yeah, he essentially sold the information ahead of time. That's that's just so if he did in fact sell it. Now, what if
+1:09
+you were just talking to your boys and you're like, "Yeah, you know, don't bother coming to the game. LeBron's not
+1:14
+playing." Right? and then your friend does something stupid just like I might say to somebody you know oh hey yeah I was
+1:20
+uh you know I was at a party and somebody told me this company is going to buy this company and uh but you know
+1:26
+and then they told their friends and then that friend traded on it or that friend's friend traded on it. So this gets people pinched all the time in
+1:33
+insider trading. So, there's a lot of gray area here now that people have to get used to, which is, you know, if you're the trainer or
+1:40
+you're a security guard at one of these arenas and the security guard finds out
+1:46
+and they, you know, are at a poker game and yeah, I know LeBron's not going to play tonight and then somebody gets
+1:51
+their fantasy sports out and puts $100 or $1,000 on, it's probably not going to get picked up.
+1:57
+So, Brave New World, um, there's a chance that none of this is cataclysmic.
+2:03
+So yeah, anyway, um it's a brave new world, but I think all of this being regulated
+2:09
+and being on the up and up is going to actually take fraud that was going on that we were unaware of and
+2:16
+make it above board. So I'm actually confident that the referees aren't doing any of the shenanigans like Tim Donah
+2:22
+was doing back in the day um where he was giving the injury reports to the mob allegedly. I think he got convicted of
+2:28
+that, so I don't know if you use the word allegedly anymore, but anyway, very interesting story. uh lots of technology
+2:34
+opportunities there. So if you're a startup and you see these kind of problems, you can build a company and then sell it to those people to solve
+2:40
+that problem. The NBA is going to need one of these as well, which is educating
+2:45
+their players and trainers and everybody around it as to how easy it is. And so
+2:50
+there's so many startup opportunities here. Um I'm glad that these things are all getting regulated and that they're
+2:57
+above board now. So I actually take the opposite approach to I think things are fixed. I think things are being fixed.
+3:04
+This week in startups is brought to you by every. Running a startup is hard
+3:09
+enough. Every takes care of incorporation, banking, payroll, benefits, accounting, taxes, and more so
+3:15
+that you focus on building not back office admin. Visit every.io.
+3:21
+Nexos. Stop Shadow AI in its tracks with the unified platform for secure AI
+3:27
+adoption and productivity. Try it with a free 14-day trial at nexos.ai/twist
+3:34
+and LinkedIn ads. Start converting your B2B audience into highquality leads
+3:40
+today. Launch your first campaign and get $250 free when you spend at least
+3:45
+$250. Go to linkedin.com/thisweekinstartups to claim your credit.
+3:56
+All right, everybody. Welcome back to This Week in Startups. I'm your host, Jason Calacanis. x.com/jason.
+4:02
+Instagram.com/jason. He's Alex Wilhelm. You know him from TechCrunch, a bunch of other stuff.
+4:09
+He's x.comex and cautious optimism is his newsletter.
+4:16
+Search. Hey, Joe. Hey. Hey, Joe. I'm saying hello. You know, people don't know we're doing live now. when we get
+4:21
+thousands of people tuning in live and it really does make the show great. If you want to join us on the live team,
+4:29
+x.com/jason, follow me and you'll get the live YouTube. Look for this weekend startups
+4:34
+or actually even better go to this weekend startups.comyoutube and when you go to that URL boom it
+4:40
+automatically subscribes you if you're not but then you got to hit the bell. We have so much to go over. It has been an
+4:46
+absolutely crazy week. There's a lot of law and disorder going on. Did you
+4:51
+notice that? Have you noticed this trend? I have noticed this trend. There seems to be an uptick in fraudulent activity
+4:58
+that we're now hearing about, Jason, especially involving one of your favorite things in the entire world, which is poker.
+5:03
+Yes. Uh there's the pot calling the kettle black. You also love to play some cards. Well, let's get started. You're
+5:09
+talking of course about uh Cash Patel came out after an amazing season opener
+5:14
+for the Knicks and for the Spurs. We had that crazy performance. I don't. Did you see the highlights of Wemby in San
+5:20
+Antonio? I have I have not I even I have not even caught up with my Warriors yet. So that's how far behind I am.
+5:25
+WBY is like this 7 foot five. He's in his third year. You know, to call him a unicorn like Porzingis or Kevin Durant
+5:32
+would be an understatement. He's kind of like an alicorn. Um Pegasus and Unicorn.
+5:38
+And he's doing things in the NBA nobody could imagine. And uh then of course we
+5:43
+get this drop of a crazy Yeah, there's WY. That's WY.
+5:48
+And man, the highlights from this are just bonkers. If you just look up WBY highlights game one, he he had a
+5:54
+performance that literally had Bill Simmons and Stephen A. Smith and some of my NBA friends uh in my group
+6:01
+chat. Like I we've never seen this before. 7 foot five guy doing crazy things on the court. Putting all
+6:07
+that aside, after this incredible launch of the NBA season, Cash Patel came out and dropped the hammer. Some people
+6:15
+saying this was political, um, you know, Stephen A. Smith took the position this was political. Trump trying to get back
+6:22
+at BLM or the NBA and there was a race issue. I I don't know anything about that. Everything is so political these
+6:29
+days. But, um, I do know about poker and
+6:35
+I do know about sports betting. So maybe you could tee up for the audience, Alex, what exactly got dropped on Thursday
+6:42
+morning. We're taping here on Friday. You'll get a Friday night. Yeah. So on the poker side of things,
+6:47
+there were a series of games that were set up in a fraudulent manner, Jason. And they involved what were called face
+6:53
+cards, which in this case were high-profile people from the NBA. That's the sports connection for folks who were curious. And this included uh Chanty
+7:00
+Bilips, who I believe is the coach for the Portland Trailblazers, along with some other names. These games were
+7:06
+essentially marketed by using whales. And Jason, for folks who don't know, a whale is a player with a lot of money
+7:11
+and perhaps maybe more money than skill. So if someone invites you to a game and says, "Hey, we're going to have a couple of billionaires and they're going to be
+7:16
+drunk. You want to go because the whales will be splashing around with their money." Now, these games cheated uh a
+7:22
+variety of ways, Jason, manipulating shuff shuffling machines, an x-ray table. They had poker chip trays that
+7:28
+were scanning cards. They had cell phones set up and they were moving data all around which was a whole lot of work to make $7 million over a long period of
+7:35
+time. The last thing I'll say about this is the uh four of the five families uh famous for crime in the New York City
+7:41
+area were involved as enforcement. Allegedly, you got to say allegedly 17
+7:46
+times. All this is alleged. 100%. I have no inside knowledge. I was not invited as a whale or a sharp and uh
+7:53
+this is all from from the FBI and Mr. Cash Patel. I I will say, Jason, it seems like a hell of a lot of work and a
+7:59
+lot of illegality to make $7 million when in the technology world, $7 million is absolute pocket change uh in the AI
+8:07
+game. So, it's just it almost feels like small potatoes. Um yeah, there is a small potatoes
+8:14
+aspect to this if you've got a 20 or $30 million NBA contract, but uh these
+8:20
+rigged games have been around forever. Uh, if you read any of the poker law
+8:26
+lore, I should say, um, there were people who were going, I heard about this one, they would go to games in Texas, you
+8:32
+know, and on the way to the games, they would have decks. These are marked decks. So, if you look at the back of a
+8:39
+deck of cards, somebody can pull up a marked deck image from just Google images, and we'll show it. What they
+8:45
+would do is they would have on the back of the cards this fancy intricate
+8:51
+um, patterns. Now, what you would do is you would either cut the deck with an
+8:56
+imperfection or you would put some sort of hidden thing on the card. So, if I was across from you, I would know you
+9:02
+have an ace or a king. And you don't really need to know all the cards if you just knew who has aces, who has kings.
+9:07
+This is a tremendous advantage of when to fold and when to go in. This is the most simple version of it. And so, what
+9:13
+they did was there was a tradition of like picking up a deck of cards at a gas station on the way to a game that was
+9:18
+racked and sealed. Yes, this is really crazy poker law at these games in So here you go. If you're
+9:24
+looking uh and you're watching the screen here, what you'll see is in the top left corner, you have these crazy
+9:30
+patterns, but they would just be slightly different unless you put them Yeah. curly cues that are missing, but just
+9:36
+small things that would tell you if you looked at them, this is an ace, this is not an ace, this is a club, this is a heart, giving you a huge edge, Jason,
+9:43
+frankly. Correct. And so these slight imperfections. Another way to do this is people with their nail could indent or
+9:50
+bend a card in a game. Yes. And then when the bent card comes around, and this is why when you're
+9:56
+playing a game, if you ever see a bent card or a car with an indentation, you stop the game, you say there's a bent card, you hand it to the dealer.
+10:01
+Founders, listen. If you've got a B2B company and you're marketing your product or service to other businesses,
+10:07
+you need to use LinkedIn ads. Otherwise, you're wasting your time and you're wasting your money. LinkedIn isn't some
+10:14
+random social network where everyone's using a fake name and posting nonsense. It's a network for professionals.
+10:20
+LinkedIn knows who the big players are and who the key decision makers are in
+10:25
+your vertical based on the data they're already collecting. Everyone's on LinkedIn. Me, you, everyone. The
+10:31
+platform has more than a billion members and that includes those 10 million seuite executives. And that's the kind
+10:37
+of reach you need to grow your business. LinkedIn's advertising tools aren't just throwing your messages around for anyone
+10:43
+who's clicking. No. B2B marketers report 2.5 times higher returns on ad spend on
+10:49
+LinkedIn compared to other social platforms. That's why my firm Launch advertises our own projects on LinkedIn.
+10:55
+We want to reach people who are actually doing exciting work at real companies, not randos, not bots, not trolls, real
+11:03
+executives. So, here's your call to action. We've got a special offer just for Twist listeners. Launch your first
+11:09
+campaign and get $250 free when you spend at least $250. That's one for one.
+11:14
+Go to linkedin.com/thisweek in startups to claim your credit. linkedin.com/thisweek
+11:20
+in startups.
+11:26
+The dealer will call the floor over and they will stop that hand immediately and
+11:32
+they will put a a what they call a new setup. A new setup. Rich guys in big
+11:38
+poker games can say, "I want a new setup." Just because they're running bad, superstition, or for this reason,
+11:43
+when they do that, they take the deck, they put it away, they crack open a fresh deck. I heard these stories that
+11:49
+they would go to the gas stations, the two or three gas stations from the airport to the big game. They would pay off the guy at the gas station to put in
+11:56
+a series of decks that were marked but were sealed in plastic. The whale comes, they buy three decks of cards, they go
+12:02
+to the game, they hand, "Hey, I got three new decks." the guy, the Confederate from the gas station would
+12:08
+say, "Yeah, Dopey picked up the decks here. They're marked." So, even if you thought you were bringing your own deck,
+12:13
+it would be marked. Uh, so let's put that aside for a second. There are new high-tech ways to do this. One of them
+12:18
+is eyeglasses or contact lenses. And then, uh, some dyes that you can only
+12:23
+see if you're wearing those. Another way to do this is what's called being a mechanic. You saw this famously
+12:29
+in uh, the movie Rounders. That's where people who shuffle the deck can put the aces on the bottom two slots, let's say.
+12:36
+So, they see the aces as they're shuffling. And as they shuffle, they just put them on the bottom. Then, when they uh throw the cards, they're
+12:43
+throwing from the top of the deck to everybody. Then, they get to Alex, and the dealer, who's a Confederate, would
+12:49
+send a card from the bottom of the deck. Now, I've been in games where I think I've seen this. Um Oh, really?
+12:54
+And Yeah. I've been and I've been games that I think were dirty at like just a small number of times like two or three
+13:00
+times and I never go to those games. If you're going to a game where there's celebrities,
+13:06
+like I got invited to Molly's game over and over and over again. Molly would text me and call me when I lived in Los
+13:11
+Angeles 20 years ago and say, "Hey, Leo or you know Toby or this celebrity, that celebrity is going to be at the game.
+13:17
+They want to see you." And I always had the same joke to her, which is they want to see me lose 50 grand. And at that time the games a big game would be 10k
+13:24
+buy in 25k buy. Now these games have gotten significantly higher. There are people backing people staking people.
+13:30
+Eventually Molly's game allegedly you know uh got taken over by I don't know
+13:35
+if it was the Russian mob or the Armenian mob some mob group. So what happens in these games is uh
+13:42
+they can use also what's called the deckmate 2. There are different card shuffers. A card shuffler means um it
+13:49
+just automatically shuffles the cards. It fits into the thing. I actually own a card shuffler. I've had it for over 15
+13:55
+years. Technically, people were not allowed to have these. There's like two brands, but I had one of the ones that like are used
+14:02
+in casinos. These are like really on the up and up. But the more recent ones from China, the Deckmate 2 specifically, they
+14:08
+know the value of each card. So, if you were to take a card out of the deck and put a card from another deck in there
+14:15
+and you had say five aces, it would it always checks the cards are correct and
+14:20
+then it tells you, hey, there's something wrong here. You have 51 cards in the stack instead of 52. Oh, you left
+14:26
+in uh the jokers. We're not playing with jokers. So, this is the Deckmate 2. I have the Deckmate one. Uh these things
+14:32
+were never available to individuals. They were like an offmarket purchase, you know, falling off trucks kind of
+14:38
+situation. Ah, got it. Let's leave it at that. Um, so there's all kinds of ways to cheat people. You
+14:44
+could also have three people playing from the same chipsack. So me, you, and Lon have, you know, $50,000 were all
+14:51
+bought in, and then, you know, well one, and well two, you know, they get aces, but they're playing against three other
+14:57
+players. Putting this all aside, uh, if you're in a game with celebrities and they're taking a rake, which is illegal
+15:02
+in most states. If you're playing a home game in most states, it's legal if you're not taking a rake. In other
+15:08
+words, making a profit because then you're in uh competition with the uh casinos and they don't like that.
+15:14
+They do not. You can do a bunch of searches online where things are illegal, where they're illegal, and what the lines are. It's
+15:20
+different in New York. Like even running I think games in New York is technically not legal, even if you're not taking a
+15:25
+rake, but they kind of let people do it. I think DC has rules. It was always very famous. Uh rumors of Obama or Clinton
+15:33
+having a poker game, friendly one. Um anyway, when it becomes high stakes, when you don't know the players in the
+15:38
+game, you shouldn't be in the game. If you're in the game and you're with highprofile business people who have a lot to lose
+15:45
+and the amount of money they're playing, let's say me playing for 25 or some famous CEO playing for 100k and they're
+15:51
+worth x amount of money, they're not going to cheat because their reputation is more than the cost of that. Put that
+15:57
+aside. So, Chanty Bilips, who's currently the coach of an NBA team,
+16:03
+I believe he's the coach. I'm going to double check that now, but I believe it's the Portland Trailblazers, my my theoretical home NBA team.
+16:09
+So, you know, if you look at this like and and this is something that's been going on for five or six years
+16:15
+allegedly. There's also all these sports guys play bed and other games when they're in the
+16:21
+planes because they have a lot of downtime and it's a nice bonding thing. But if you remember the Gilbert Arenas
+16:27
+uh bringing guns to the locker room, that whole case when he got suspended for a year was over poker debt. So poker
+16:34
+debts can get spicy, dicey, etc. There's a million ways to cheat now. There were,
+16:41
+you know, a half million ways to cheat before technology. Let's put that aside.
+16:47
+There's a second thing going on here. I don't these two cases are not related in any way, but fantasy sports has made it
+16:53
+very easy to do what's called a prop bet. Not betting on the score of the game. Very hard to influence that, right, without it being very obvious.
+17:00
+Now, in this other case, you could let people know, um, hey, my overunder, the
+17:08
+overunder is I get seven rebounds. So, on average, I get seven, they think,
+17:13
+versus this team, which has an incredible rebounder. I'm against Dennis Rodman, I'm going to get, you know, only
+17:19
+six. Sure. Well, if the person, you know, halfway through the game, uh, says, "Oh, I I sprained my ankle." And they come out of
+17:26
+the game with four rebounds, you know, the under is pretty good, right? You could bet under a certain number of rebounds.
+17:31
+And these idiots, these incredibly stupid people, allegedly, if any of this is true, it would be the height of
+17:37
+stupidity to do this kind of stuff. But there are some gray areas here. And some of this is new, some of it is as
+17:43
+old as time. Yeah. Just I I would say the startup angle here is as we talk a lot more
+17:48
+about prediction markets and we talk more about options trading and we talk about crypto and ICOs and um token
+17:55
+treasury companies Jason and spaxs are back just know what you're getting into. wag your money you can afford to lose
+18:01
+and uh try not to get caught up with the Gambino family collecting your debts because that's not going to be a fun way
+18:07
+to on the overunders very specifically um because all of this
+18:13
+is legal and not run through bookies anymore you know your local bookie at the bar there are software companies
+18:20
+somebody can look it up um there's a software company that looks across all
+18:25
+of the uh pred prediction markets or really the fantasies the the the you
+18:30
+know the prize picks the draft kings. So there is a
+18:35
+literal uh company that looks at the action being placed. Now, when this uh I'll
+18:43
+call, you know, when an incredibly stupid person, I won't say these people are because they're it's all alleged and
+18:48
+this, you know, you never know. This may not be as bad as it looks. Mhm. But if a stupid person were to say, "I'm
+18:55
+going to do this thing where I get under a certain number of rebounds." And their friends put $200,000 on them and they're
+19:01
+the fifth player or sixth player on the team. They're not LeBron James. They're not Steph Curry where all the action tends to be. uh and they normally have
+19:09
+$20,000 in action on them across all of the different um you know sites. This
+19:17
+company um which I don't know the name of but if you find one law you can just check that it's exactly that um and pull
+19:23
+up the website and just verify that for us please. um they will alert the
+19:28
+different places. Hey, there's odd action, right, going across these sites and then they
+19:34
+kill that prop bet and they send it to the feds. So, we found one Jason's called
+19:40
+polyouter.io. This is specifically for the prediction markets. I'll just pull it up here.
+19:46
+Yeah, this just shows essentially how to get all of that in one place. Now, on the on the thin betting volume spiking,
+19:52
+didn't some players specifically in a different case get busted for making really large prop bets on their
+19:58
+relatively small normal trading amount? And it was in fact the volume differential that got them busted because I I remember seeing headlines
+20:04
+about that. Yes, there are so many amazing AI tools out there that can make your team faster
+20:09
+and more effective. Any founder would be a fool not to embrace these tools. But a large team making use of a diverse array
+20:16
+of cuttingedge AI apps can also pose a privacy and security nightmare for your
+20:22
+organization. But now there's Nexos AI, the workspace that will help your team
+20:27
+up their game with greater efficiency without sacrificing your data or your peace of mind. Nexus AI is going to give
+20:34
+your teams a simple browser-based environment to work in, integrating all
+20:39
+the latest and greatest AI models and replacing the various potentially problematic tools and subscriptions your
+20:46
+staff can't even keep track of anyway. You're probably paying for two or three things over and over again redundantly.
+20:51
+Finally, your admin team gets full visibility and oversight into what's happening. So your team can enjoy all
+20:57
+the productivity gains of AI without the data leaks and your platform remains
+21:02
+compliant while your data stays safe and secure. But don't take my word for it. Try it yourself. Go to nexos.ai/twist
+21:10
+for a 14-day trial. That's nexos.ai/twist
+21:20
+if you make these stupid bets. Um, and yeah, it looks like there's a lot of
+21:26
+them. I just asked producer Claude, and it looks like Seon offers AIdriven fraud protection tools for gaming platforms.
+21:33
+Geo Comply, widely used across US sport books to verify player location and
+21:38
+print VPN fraud. Sports Trader focus on protecting sports integrity by detecting max fixing and irregular betting
+21:46
+behavior. That's the one. It must be Sports Trader. and uh somewhere in these documents about uh all of this, that was
+21:53
+one of the companies, I think, that alerted them. So, they just turn the bed off and then they give it to the feds and these people get busted. Let's go to
+22:00
+the gray area. Sure. Um your uh and I think there's an uh
+22:06
+allegation around LeBron James here. Not that LeBron James did anything, but LeBron James was going to be out of a game or he was potentially injured. And
+22:13
+these injury reports come out early in the day and they get updated as you go and people take them into account when
+22:18
+they're betting on games obviously, the handicappers and the people who do it professionally. So what happened in one
+22:24
+of these cases allegedly is somebody told their friends, "Oh, I don't think LeBron's going to play tonight. He's he
+22:31
+tweaked his ankle." They tell their friends, they put action on the games having that information an
+22:37
+hour before the lines change. You know, if they say, "Hey, LeBron's not playing tonight and he's LeBron in his prime,"
+22:43
+the odds in the game would change dramatically. But if you get your bet in, you've got your bet locked in at that other bet. So,
+22:49
+is that illegal? Well, the injury status, Jason, was sold by allegedly um his friend and former LA
+22:57
+Lakers coach Damon Jones. Uh Jones was also an ex Cleveland Cavs player and uh
+23:03
+yeah, he essentially sold the information ahead of time. That's that's just so if he did in fact sell it. Now, what if
+23:08
+you were just talking to your boys and you're like, "Yeah, you know, uh, don't bother coming to the game. LeBron's not
+23:14
+playing, right?" And then your friend does something stupid. Just like I might say to somebody, you know, "Oh, hey, yeah, I
+23:19
+was, uh, you know, I was at a party and somebody told me this company is going to buy this company and uh, but, you
+23:25
+know, and then they told their friends and then that friend traded on it or that friend's friend traded on it." So, this gets people pinched all the time in
+23:32
+insider trading. So, there's a lot of gray area here now that people have to get used to, which is, you know, if you're the trainer or
+23:40
+you're a security guard at one of these arenas and the security guard finds out
+23:45
+and they, you know, are at a poker game and yeah, I know LeBron's not going to play tonight and then somebody gets
+23:50
+their fantasy sports out and puts $100 or $1,000 on, it's probably not going to get picked up.
+23:56
+So, Brave New World, um, there's a chance that none of this is cataclysmic.
+24:03
+So yeah, anyway, um it's a brave new world, but I think all of this being regulated
+24:09
+and being on the up and up is going to actually take fraud that was going on that we were unaware of and
+24:16
+make it above board. So I'm actually confident that the referees aren't doing any of the shenanigans like Tim Donah
+24:21
+was doing back in the day um where he was giving the injury reports to the mob allegedly. I think he got convicted of
+24:28
+that, so I don't know if you use the word allegedly anymore, but anyway, very interesting story. uh lots of technology
+24:33
+opportunities there. So if you're a startup and you see these kind of problems, you can build a company and then sell it to those people to solve
+24:39
+that problem. The NBA is going to need one of these as well, which is educating
+24:44
+their players and trainers and everybody around it as to how easy it is. And so
+24:50
+there's so many startup opportunities here. Um I'm glad that these things are all getting regulated and that they're
+24:57
+above board now. So, I actually take the opposite approach to I think things are fixed. I think things are being fixed,
+25:04
+which is much better because you're using that in a ironic way. All right, Jason. First up on the docket today, uh, everyone's talking about 996. This is
+25:11
+the famous model from China in which workers work from 9:00 a.m. to 9:00 p.m. 6 days a week for a total of 72 hours at
+25:18
+a minimum. Okay. Um, interestingly enough, you know, we've talked about this since 2019. Uh but currently in the
+25:25
+American AI era, we are seeing headlines from the Journal, Fast Company, Washington Post. Everyone's talking
+25:31
+about the insane pace of work required today by leading startups. And I
+25:37
+actually I pulled a tweet from you from back from 2019. This is a man named Jason Calenna
+25:43
+saying, "Founders, we're up against Jack Ma enforcing a 72-hour work week, 996, 6
+25:49
+days a week, 9:00 to 9:00 p.m. The exact same work ethic that built America. You can get on your Twitter pedestal and
+25:55
+attack Jack Ma or you can make a plan to win." Now, that was six, seven years ago, Jason. So, quite quite a while.
+26:02
+Yeah. I mean, I just had heard about this. When venture capitalists used to invest in startups, their big trick was
+26:07
+to come on a Saturday to visit the startup and see how many cars were in the parking lot or they would come at night. Then we got into this life work
+26:14
+balance nonsense. Um unions, uh people, you know, wanting to see their families,
+26:20
+all this craziness. Um and uh you know when you get in a dog fight on a
+26:26
+business level and you've got a ship product like there's a huge prize here
+26:31
+um you know we talked about the TAM of this market is going to be huge. Yes. Then people can opt into we're going to
+26:38
+work 72 hours a week. We're going to work six days a week which by the way the entire world did for thousands of
+26:45
+years. It worked six days a week. It was only Ford and the Model T and the
+26:51
+concept of getting Americans uh the ability to take a weekend road trip that created the five day work week, the
+26:57
+40-hour work week in order to sell more cars. You can look all that stuff up. Um
+27:02
+so it's it's not super controversial to bring this back. And if you're being
+27:07
+compensated wildly, you know, hundreds of thousands of dollars a year.
+27:13
+Yes. uh you know stock options that could be worth millions to tens of millions of dollars. It's not unreasonable uh for this to happen and
+27:19
+it's in fact not illegal. If you're a salaried employee and making beyond the minimum wage and what minimum wage plus
+27:25
+overtime would pay. Uh my understanding is this is legal in the United States people can make that
+27:32
+decision and tradeoff. So um the legality points very interesting though Jason because after well
+27:38
+basically go back in time 2019 uh Michael Morates formerly of Sequoia and now kind of a venture marriages for the
+27:44
+world wrote an article for the Financial Times discussing how much Chinese tech companies were working and also how
+27:49
+frugal they were and it was a bit of a shake the cage moment for American startups at that time. I remember that. That was the Financial Times, right?
+27:56
+Yeah. Yeah. Yeah. But then some things happened. So over in China, um Pen I'm going to ruin this everybody. I'm sorry.
+28:01
+But Pen Juadro uh had an employee die on her way home from work. Another one jumped off a bridge and another set
+28:07
+themselves on fire. And that led to a conversation inside of China in which there was a mini revolt amongst tech
+28:12
+workers kind of complaining about the insane pace of work that was required of them. And that led to China in 2021
+28:18
+saying that 996 was actually illegal. Now, they haven't stamped it out.
+28:23
+Coverage since then has made it clear that it's still in effect. But even inside of China, where this model kind of came from, there was push back
+28:30
+against it. I just wonder if people are doing good work or how much of this is performative versus versus actually
+28:37
+being effective. Jason, can you tell me more about that? I mean, there are moments in time where
+28:42
+you can burn out and it works against you. Uh, but putting in a 10-hour day, 12 hour day, you can still be
+28:48
+productive. Um, and it's uh it's a it's a personal choice if you want to do it.
+28:55
+It's not a big deal. And then a lot of times law of big numbers, if you've got a 100 million people in China who are
+29:02
+working 996, let's say, because they want to become rich and they want to take their family out of, you know,
+29:09
+poverty to the middle class or middle class to upper middle class and they make that decision,
+29:14
+you know, a certain number of people tragically uh commit suicide. it's one in a 100,000 or one in 250,000 depending
+29:21
+on the society, the age group etc. So would that person have committed suicide anyway is what you have to ask. Now this
+29:28
+comes across as incredibly cold and callous but in business and in life they call this the law of big numbers. Uh so
+29:34
+at Burning Man there's a hundred thousand what 75,000 people there and so if one person were to commit suicide at
+29:42
+Burning Man by you know every 10 years by running into the Burning Man fire
+29:47
+right doesn't mean Burning Man you know uh killed this person. It means this person was going to kill themselves
+29:54
+in all likelihood anyway. So I think I think I'm pretty much on board with your take on it's fine if
+30:00
+you're compensated fairly for it. I'm a big enough deal now that I can afford to hire my own admin team. Look at me. They
+30:06
+handle all the details of running my company. But if you're a startup, you need to spend your time obsessing about your product, not filling out paperwork
+30:13
+and doing all these books. That's why I want to tell you about Every. They've worked with over 1,000 startups from first-time founders to VC funded teams
+30:20
+and more. And they've got the experience to help your company navigate whatever is coming around the bend. Maybe it's
+30:26
+time to incorporate your startup so investors take you seriously. Every is going to take care of those filings for
+30:31
+free without any unnecessary delays or legal fees. Hey, maybe you just got some new funding and it's time for you to
+30:37
+scale up. With Every, you'll get 3% cash back on every dollar you spend on your company's card. Hey, maybe it's time to
+30:43
+say goodbye to a member of your team. It happens. Well, they've got an employee offboarding checklist. And you know, I
+30:48
+love a checklist. It's going to help you ensure a smooth transition while protecting your business both legally and financially. Plus, you'll get a
+30:55
+$2,000 bonus when you move 250K or more into your Every account. So, for your
+31:02
+incorporation, banking, payroll, benefits, accounting, taxes, and other back office administrative needs, visit
+31:08
+every.io. That's ev.io.
+31:17
+And I think that equity upside is the critical thing there because if you own what you're working on, you're less of a
+31:22
+salaried worker, more of a owner in the company. So what's the minimum equity
+31:27
+expectation you think is reasonable for an employee to have to to sign on for let's say a decade of 996 at a company?
+31:35
+Yeah. I mean, again, it would be up to the person. If the person is, you know, from an immigrant family and they grew
+31:41
+up with five people in a one-bedroom and $150,000 or $100,000
+31:48
+to them, you know, pays down this debt, you know, buys a house, whatever. Okay, that's the personal choice. For some
+31:54
+people, if they're already a millionaire, they might be like, I'm not doing this unless I'm getting 10 million in stock options. So, there's no one
+31:59
+answer. Um, there is just the reality
+32:04
+that you're in a competitive space. If you're in the NBA, LeBron James is or
+32:11
+Steph Curry or Michael Jordan is prime or Kobe Bryant certainly were definitely doing more than 72 hours of basketball
+32:17
+per week. They were working more than 72 hours a week. Navy Seals, Olympians, they're all doing they'd be
+32:24
+like 72 hours of work in a week to be an Olympian or Kobe Bryant. They'd be like, "Oh, that's like a vacation week for
+32:30
+me." So, it is what it is, folks. You don't need to be precious about it. It's not causing people to die. It's it's light
+32:37
+work when compared to what humanity was doing, you know, a thousand years ago or a hundred years ago where people
+32:43
+literally worked in fields seven days a week and maybe they took Sunday off for like the Lord's day.
+32:49
+Well, dude, much worse than that. I mean, go look at the history of mining. Yes. Thank you.
+32:55
+But here here's the thing, though. I I people are going to say, "But guys, aren't we trying to get away from that?
+33:00
+Isn't technology supposed to free us up?" And I'll just say because right now we are at a a hinch point in technology.
+33:06
+There's a new paradigm that everyone wants to apply and there's the geopolitical element. This is going to be the way it goes when the markets are
+33:13
+competitive. So um last thing Jason before we scoot on here. I went and I did some searching around the web and I
+33:18
+found some companies that have job postings that explicitly note higher hourly requirements. So Corgi says that
+33:24
+new hires and people pursuing the account executive route are required to be in the office six days a week.
+33:29
+Merkor, who we've had on the show, six days a week with Monday through Friday in person, so one remote day. Latch bio
+33:35
+says six days a week, Monday through SAT, etc., etc., etc. So, you can see companies being upfront and I think
+33:42
+upfront expectations, reasonable equity splits, go for it. If you don't have those things, you're kind of being a
+33:47
+jerk. Yeah. And Europe is, you know, even Europe is having this discussion. And in
+33:54
+China, I I think uh there was a podcast 996. I think either Sequoia or Google
+34:01
+Ventures had like literally named their podcast 996. So, and developers named their protest site
+34:07
+996.IicU because working 996 sends developers to the intensive care unit. If you think
+34:12
+you can compete in a company working 40 hours a week and hiring, you know,
+34:18
+whatever it is, you know, twice as many. If you think you can compete with 72-hour a week work weeks where people are getting massive compensation by
+34:24
+working 35 hours a week, go do it. Spend twice as much money, have twice as many people, and see if you compete. You
+34:31
+might actually be able to. Maybe you'll attract more people. Maybe maybe better people will come work for you. I do think you know we might be sitting here
+34:37
+in 10 years and have um a standard in the United States uh
+34:44
+for a lot of different workers let's say lawyers and accountants of four days a week or teachers or nurses we may go
+34:50
+down to like a 4 day 35 hour a week you know 9h hour a day 10hour a day work
+34:56
+week and in fact there were some companies that were pitching this during the peak woke era of Silicon
+35:03
+Valley and this stuff es and flows like during during that peak woke DEI, you
+35:08
+know, kind of life work balance nonsense. Um, there were literally
+35:14
+companies that were saying, "Come work for us. You can have unlimited vacation and work four days a week." And that was
+35:20
+their sales pitch. And those companies, I can't even remember their names because they lost to the companies working 996.
+35:25
+And speaking of getting fit, look how felt I am. I was on the I was on the
+35:31
+scale the last week, 169 to 172. I really in my perfect zone. I'm trying to
+35:37
+get down to 166 for ski season and and increase the muscle mass on my body. How did I do it? Spent the last four years
+35:46
+testing different GLP ones. You know what I'm talking about. Ompici Monjouro
+35:51
+and um changed my life. I don't want to get emotional, but uh I lost 40 pounds.
+35:56
+I feel great. I don't look at myself in the mirror and go, why can't I lose this weight? I had uh whatever my genetics
+36:03
+working against me, my lifestyle working against me, the food supply working against me. I'm not gonna beat myself up about it. I used a tool GLP1s,
+36:11
+uh having a better diet, exercising, rocking, fasting. I I tried everything
+36:17
+and it worked for me. Might work for you and it might if you want to try, I
+36:22
+suggest ro.co.co. I'm an official spokesperson. Me, Charles Barkley, and Serena Williams.
+36:30
+three incredible notable athletes in their field or I should say two notable people and me. Those are the three
+36:36
+spokespersons for row.co. Two incredibly famous people and me. So go to road.co
+36:43
+and hopefully it works for you. I got the food noise out of my head. I
+36:49
+was I believe the phrase is podcaster waistlines matter too. Yes. You know absolutely.
+36:55
+Let's keep going. All right. Next up in the docket, um let's talk about Pre. Pre is a former uh launcher. We all love Pre. Fantastic
+37:01
+guy. We lost him because he went off to go build his own company. So back in
+37:06
+unbelievable Pre, how dare you. But he made a very interesting video clip, Jason, that he shared on Twitter back in
+37:12
+September that you asked him about in which he was doing some uh storyboarding, if you will, for a promo
+37:18
+clip for his company, Tempo. And you asked him to do a demo for us. And we also have the final version of that. So,
+37:24
+I thought I would show the uh the 19 second clip that got you interested and
+37:29
+then show you the final version and we talk about it. Okay, great. Yeah, Precious is building um a company called Tempo to extend your
+37:36
+health span and he made a great promo video and he shared it. So, here we're
+37:41
+seeing it man I once was great voice over. Thank you. and an old man sitting on a
+37:47
+bench. Choices you made writing in his journal for stepping into the morning sun
+37:53
+getting sunlight. Felt easier to stay inside. So, here's the simple workflow.
+37:59
+So, yeah, I asked Press to do a how-to because people are making these incredible videos. Uh, and some people
+38:06
+are spending 50 or 150 or $250,000 doing them. Other people are doing them with
+38:12
+AI. And I think Pre is in that group. So let's hear from pre how he did it. All right, here is our dear friend
+38:19
+explaining the nuts and bolts of how to do this yourself if you want to. This is a simple workflow started with the
+38:26
+concept. We narrowed down to this a letter to my younger self concept, which is basically 100-year-old grandpa writes
+38:32
+a letter to his younger self. As his pen touches the notebook, there's a bunch of shots of me doing a number of healthy
+38:37
+activities. The reason I chose my grandpa was I just recently hired him. Welcome to the team.
+38:42
+Welcome to the team. Congratulations. So he became the first chief centinarian
+38:47
+officer. I wanted to find a fun way to include him in this weight list video. Then I wanted to script it out and
+38:53
+storyboard. This is where I used ChachiPT. I basically prompted it with this and got a whole structure out of
+38:59
+it. So now we have the concept, we have the script. Now we want to create a storyboard. The storyboard now comes
+39:05
+after creating the script. So we basically have this script and structure. So we're going to pop that into GPT. ask it to start creating
+39:13
+stills. You can refine this further. What that ends up looking like is something like this. While I make the
+39:18
+story, stills, sketches. And so what he's showing is the prompt he wrote. So he comes up with the
+39:25
+concept. 100-year-old writing a letter to himself says, "Let's make this into a script." Gets basically uh a scene by
+39:34
+scene of what should be in this advert this um this ad, this promo video. And
+39:39
+then it generated sketches in storyboards for him. Then he took the story boards and then he made them
+39:45
+reality. And uh this is just wild when you think about it. Keep going. Drawn by
+39:51
+hand for the scene. For example, a sketch of a grandpa sitting outside on a bench. And again, I'm just doing like a
+39:56
+rough draft here just because I want to see how the story lays out before we make the actual thing.
+40:02
+You could use VO Sora if you wanted like actual videos. And now I have about 20 stills that create the whole story. So
+40:09
+we got the concept, we got the script and storyboard. So for the voice over, use 11 labs. We're going to go to text
+40:15
+to speech and put the script that I want create. And for voice, I'm either going to search their library or create a
+40:21
+voice. If you go to the voices section and create or clone a voice and so I use a combination of different voices to
+40:27
+create this old man speaking. Anyways, you get the idea. I'll go here and I'll just download that into an MP3.
+40:33
+Voiceover is done. Now we want to go to music. What I did was I basically took that into chat and said give me a prompt
+40:40
+that being his description of the advertising and I went over to this other tool called Sora. Using chat I outputed this
+40:46
+prompt as well. He means to give to Sora to then create. Make sure it's an instrumental track and
+40:52
+it'll create different versions in Sora. So I can go through pick a track that
+40:58
+makes sense that I like. Now we have the concept, we have the script, we have the storyboard, we have the music, we have
+41:03
+the voice over, and now we just need to edit it together and simple editing tool. I'm going to bring in Cap Cut. And
+41:10
+so I took all the stills and just placed them out here. So we have just over 20
+41:15
+stills here. I'm going to drop the audio track from 11 Labs. I'm going to drop the audio track from Suno. And then it
+41:21
+turns out to sound and look like this. to the younger man I once was.
+41:28
+So, the idea here, again, we're not even going to ship this really. This is just for our own like creative process,
+41:33
+seeing if we like the concept enough to make it real. And that's it. That's the process of how to make a quick concept
+41:40
+video. I I thought it was fantastic. I love the fact that he went through every single tool in order, showed them how to do it
+41:45
+because I could do that now, Jason, in in a couple hours. I love it. Yeah. Uh, I mean eventually you'll be
+41:51
+able to do this in one LLM or in a browser with agents that will do the
+41:57
+entire process for you. Right now you have to use the best of breed tools to m
+42:02
+make each piece and then stitch them together. And the interesting thing is
+42:08
+he could have just released it as the sketches and I think it would be really effective. I think they went and took
+42:13
+this concept and you refine the concept. You refine the concept. the other person who did this quite famously, I believe,
+42:20
+and our executive director Lon, our director Lon will correct me if I'm wrong, but um perhaps my favorite
+42:27
+director of all time, Ridley Scott, definitely in my top two, three, um Ridley Scott was known for doing
+42:35
+story boards constantly and I think he learned to do them himself and he would
+42:41
+storyboard all these ideas and sets and everything, whether it was Aliens or Gladiator.
+42:46
+and um he could just do them himself. What that does is it lets you kind of get a feel for the story before you do
+42:54
+something expensive like hire actors and uh you can kind of see if the um tone
+43:00
+works and if everything works. So this is genius. We have a company Saga uh
+43:05
+which does this that we incubated in our accelerator and we'll pull up Saga in a
+43:10
+moment. Um yeah and here's the picture. Thank you, producer Alain, of Ridley Scott doing the alien. Pull this up.
+43:17
+This is incredible. Check this out. It's in the uh twist taping room. Yep. Yep. Yep. Yep.
+43:24
+Here is the images which shows a number of different screens or would these be
+43:29
+individual scenes that I'm looking at here? Yeah. So, I guess what we're looking at,
+43:36
+let me pull it up on mine. Um, yeah, these are each individual scene and then I guess there's a title and then notes
+43:42
+underneath it. But he would draw these himself. And if you look on the top right, you're seeing the side view of a
+43:47
+human with the face hugger on it. The iconic face hugger. And what's great about that and then you
+43:53
+can see the engineer on the second one on the right is I think the engineer and its ship or you know somebody going
+43:59
+ready to be in a cryovac etc. Uh acid dripping uh you know as uh when you kill
+44:06
+these aliens there acid drips on the left and it's just some blood drops. All of this is to say he doesn't have to uh
+44:15
+tell people what he wants. He can show what he wants. And then here, if you pull up the Napoleon ones. So here you
+44:20
+see Napoleon and uh I think those are the scene numbers on the left. 53 61.
+44:26
+And he was just great at drawing these um in real time. Just think about how
+44:31
+much time this saves when you're trying to explain something to somebody. And this is really indicative of how AI is
+44:40
+going to make everybody, you know, uh, Ridley Scott level pre is
+44:46
+not Ridley Scott. He has not made 10 films, but he's doing what Ridley Scott did. So the gap between the orur and the
+44:53
+amateur is closing. Yeah. You know, so from amateur to ur, I think
+45:00
+the distance between those things was a lifetime. It was decades. Now the distance is going to be, you
+45:07
+know, instead of 10,000 or 20,000 hours, I think it goes down to a 100 or a thousand hours. If pressure were to do
+45:13
+that process every day, a different story board, a different 30 second scene,
+45:18
+and he did it for a 100 days. So he put in 110hour days or 12-h hour days, and
+45:24
+speaking of 996. So if you did, imagine if you did 100 12-h hour days, you know,
+45:29
+now you're 1,200 hours into your career. What would the hundth day look like
+45:35
+versus his first day of doing that? This should be inspiring to young people who can't get jobs. All these young people
+45:41
+who can't get jobs, we've talked about static team size. We talked about AI displacing jobs. Here's the opposite of
+45:46
+it. You could become Ridley Scott level. I believe in a 100 days you could do
+45:52
+things that Ridley Scott does. You might not do them with as much panache. You might not have the instincts he has, but
+45:59
+you would get damn close. Lon, if somebody did this a hundred days in a row with these tools,
+46:06
+how good would they be at making visual scenes in your mind? I think an amazing thing if Yeah, like
+46:13
+filmmakers, a lot of them really do just spend obsessive amounts of time thinking about how things would look, how they
+46:18
+would block them out. I once uh not to toot my own horn, but I once chatted with John Woo. I interviewed him for
+46:24
+Mission Impossible 2, and he could still years later tell you every setup for the killer. Well, we put the camera here. we
+46:30
+were behind this corner. We had to move it around here. He just committed all that to memory. The whole scene was in his head so that on this on the day when
+46:38
+he was directing people, he just like, "You you need to be right here. The light needs to be here." He just had the movie already playing out in his head
+46:44
+before he ever set foot on on the set. Incredible. So, um, everybody go follow
+46:50
+Prey Pooh. My prey poo. He came to work for me, quit school, came to work for me at 18. We backed his startup. He's doing
+46:57
+great. Um, and what's his Twitter? X.com/press
+47:03
+dkumar. And if you want to check out Tempo, the company he's working on, join tempo.app.
+47:08
+We love this guy. Thank you, Press, for making us that video. And we'll put the links in the docket. If you want to read the docket, you go
+47:14
+to this weekstartups.com/doccket and then we'll put it in the show notes as well. We'll put the links to all this
+47:20
+great stuff. So if you listen to this week in startups and we give you some tips here and tactical stuff from the founders in our portfolio, we're going
+47:26
+to link to it all the time. You can go to this week in startups.comdoccket and see previous episodes dockets. Get in
+47:32
+there and get all those links. So if you watch this week in startups three days a week, Monday, Wednesday, and Friday. Sometimes we throw in a Tuesday show
+47:38
+because we're sold out of ads and they they talk me into adding a show. Um
+47:44
+you're going to just become a better founder and that's why we do this show. We're passionate about founders and
+47:49
+technology and inspiring people to start companies. And here you are. You're listening to the show. And you are going
+47:56
+to get better and better at starting companies and learning these tactical techniques if you're hanging out with
+48:02
+us. The big news this week on the anthropic front, Jason, is that the company has tapped Google for an
+48:08
+enormous compute purchase. They're going to get up to 1 million of Google's TPUs
+48:13
+in a deal worth up to tens of billions of dollars. and it's going to bring on more than a gigawatt of capacity to the
+48:20
+company in 2026. Now, reading this news, I know a lot of folks out there might not know what a
+48:26
+TPU is. So, I went ahead and did a little prep work and asked producer Claude, "What is that?" Well, it's an
+48:33
+ASIC or an application specific integrated circuit that is essentially designed just for these machine working,
+48:40
+sorry, machine learning workloads. Basically, they're designed to do a lot of mathematical operations very, very
+48:45
+quickly. And that's what powers the neural nets that we all love and know. And just for a little background here,
+48:51
+uh they've been working on the TPU since I think 2013, something around there. So they've been in the game for a long
+48:56
+time. If you want to use Claude like we do, you can go to claw.ai/twist to get started. We have a 50% discount for 3
+49:03
+months. But Jason, essentially Google TPUs are better. They're more efficient. They have lower costs and they're
+49:08
+tailored for this kind of work. But more to the point, I'm shocked that Enthropic is kind of putting aside its uh
+49:13
+long-term deal with Amazon. it's uh preferred partner for both training and inference to go rack up with Google. I
+49:19
+was curious what you thought about why they made this choice. I think any
+49:25
+um any any compute advantage these large
+49:30
+language models can get they're going to take. What's fascinating about this one
+49:36
+is that Gemini, Google, the Gemini large language model,
+49:43
+Anthropic and Claude, they're direct competitors. So, this is
+49:49
+perplexing, uh, interesting, confounding, strange bedfellows.
+49:55
+Yeah. If you're anthropic and you're giving money and doing this partnership with Google and you're both competing
+50:02
+for customers, uh, users, businesses, uh, developers, and APIs, it's kind of
+50:10
+interesting. And as we say in our industry, no conflict, no interest. What this signals to me is the anthropic team
+50:17
+and the Google team are collaborating. They're they're in like with each other.
+50:24
+They might not be in love, but they're in like with each other. Who else is in like with each other? Satya and Nadell and Open AAI were in
+50:31
+like were in love with each other. I think they've dropped down to in like with each other. And I noticed Satia
+50:37
+Nadella and Elon are in like with each other. So, and Nvidia is in love with
+50:43
+everybody. Jensen loves everybody equally. But this is um the place we
+50:49
+are. The other thing I think is super interesting is amongst the LLM companies,
+50:57
+some have money printing machines. So if you were to look at the foundation models, you've got Grock, OpenAI,
+51:04
+Anthropic, Mistral. Yeah, Mistral. Mistral. I guess I'm including them. And
+51:12
+then you have uh Gemini and you have uh Llama, what Zuck is
+51:18
+working on. Mhm. I think that's probably your big six. Am I missing anybody there? I mean, we could bring up the Amazon and
+51:25
+Microsoft models, but given that you and I always forget the names of those families of models, I think Yeah, I don't I don't see them coming up
+51:30
+yet. So, if we just take those six, look at those six. Of those six, which ones
+51:37
+have money printing machines? Which ones have money printing machines, profitable
+51:43
+machines, earnings machines? Well, Gemini, Google, correct? and Meta.
+51:49
+Okay, this puts them at a significant long-term advantage.
+51:55
+Meta and Google can build infrastructure at a pace that the other four um have to
+52:02
+go raise money for. Yes. So, let's pause on this for a second. Now, one would argue Gemini uh is
+52:10
+probably in third or fourth place typically, and I think Llama is typically in sixth place or fifth or
+52:16
+sixth place. Yeah. Uh, so the companies at the top are obviously OpenAI.
+52:21
+Um, and then I would say Claude and Grock. That's probably your one, two, and three. And then your four, five, and
+52:27
+six. Mishrol might probably llama's six. Mishral's five. And yeah. So you can
+52:33
+start to look at this. And I wonder if Google and Meta have a huge advantage in
+52:41
+that they could start deploying hardware at a scale that the others cannot. Now,
+52:46
+the others are the bells of the ball right now because they have the best product and people want to be on their
+52:51
+cap table. And then this makes me wonder why is Apple with their war chest and
+52:57
+Microsoft with their war chest not participating in this lunacy of building
+53:03
+out huge data centers, huge infrastructure. I guess Google is I
+53:08
+wonder if Microsoft too, but it's less speculative for them, Jason, because they talked about it in earnings and they've said we
+53:14
+just have the inference demand and we're just building against kind of like proven bookings. So for them, I'm not
+53:19
+that concerned. But I think that the the dichotomy between the money printers and the money needers is very important
+53:25
+because when you think about XAI and Open AI, they are spending tens of billions of dollars on Infra.
+53:32
+Anthropic isn't. They're raising money from the major cloud companies. Amazon I think 8
+53:37
+billion, Google about three billion and they're getting access to compute. So I kind of wonder and I you know I don't
+53:44
+want to sound too nice to anyone here but like is anthropic kind of nailing this because they're not taking on the
+53:49
+infra side quest. Yeah, partnerships I think are a way to
+53:56
+win here. If you want to go far, you go together. If you want to go fast, you go alone.
+54:02
+So going alone uh I think will give you a massive speed advantage in the short term and I think
+54:08
+building up partnerships could make you go further. Of course you might be inspiring the value to be a uh accreting
+54:16
+to your partner not you and this is the open AI Microsoft relationship. Yes, personified who's getting the value.
+54:24
+OpenAI has the branch chat GPT that has the largest number of users, but their
+54:29
+percentage of market share has been going down consistently now. They're still growing because the pie is getting
+54:34
+bigger, but if you look at they were 98% of the market three years ago. I don't
+54:40
+know where they are now. Um, but I think they're probably 80% of the market now in terms of consumers and developers
+54:46
+using the stuff. They're going to keep going down on a percentage basis just like Amazon Web Services
+54:52
+had the game to themselves before Azure and yeah literally and before Azure and um
+54:58
+Google Cloud and Oracle came on strong. So now you have four people competing for that three major and Oracle coming
+55:04
+on strong. Oracle's really not going to take this line down. They see uh cloud computing as a big uh a big
+55:11
+accelerant of their business obviously. So really interesting. I do think these kind of partnerships mean more stability
+55:19
+um and you know if they like you're saying if
+55:24
+inference is taken off the table for them and it's stalled by somebody else that's sort of like when Dropbox this is
+55:30
+a history lesson for folks Dropbox launched at the conference I created uh with Techrunch Techrunch 40 techrunch 50 you
+55:37
+remember back in the day I created this conference uh with an old friend of mine we're no longer friends but old friend
+55:42
+of mine begged me to do this conference with him and I did it with him. Uh, and
+55:48
+Dropbox launched there and I remember meeting the guys that Dropbox didn't work. They were they were running it out of Sequoia's offices and uh, they were
+55:54
+just having a heck of a time getting the software to work. I remember their pitch uh, which I think was at the first Techrunch 40. We can look up Techrunch
+56:00
+40 uh, pitch for this and I I think actually I own the Techrunch 40 YouTube
+56:06
+site. I got to go find it. Um, but they did a great job. They also went back and
+56:11
+forth. Do they have their own infrastructure? Is that cheaper? Do they use AWS when that was the only game in
+56:16
+town? Would they be giving it all over? And this uh going back and forth as to
+56:22
+is it an advantage to have your own infrastructure or is it a disadvantage was just personified um by 37 signals?
+56:29
+And one of our crack researchers will pull up this video that was just shared on Twitter uh now X.com of um
+56:37
+David Hanmeire Hansen DHH uh which is his Twitter handle as well. x.com/dh.
+56:43
+Really smart cat, friend of the pod. We got to have him back on soon. DHH just did um an analysis and he open sourced
+56:50
+it and told everybody of how much money they're saving by getting off of other clouds. I don't know if they're Azure,
+56:56
+AWS, but play this video and show the chart when we have it.
+57:03
+This is extraordinary. I think this is like main character energy. So my producers I think we we missed this main
+57:09
+character energy, but DH I think I had the right clip right here. Jason, let me get this set up for us.
+57:16
+Yes, here it is. By the way, great six-hour conversation between Lex Freedman and David uh back
+57:22
+in the day. Oh, this is the clip that I have is him standing up talking. Do you want That's the one I'm talking about. I was just also giving a promo to my friend
+57:28
+Lex Friedman. All right, here is DHH talking about AWS spend.
+57:33
+We were paying AWS $3.4 million. We've taken that money, invested it into our
+57:39
+own gear, and we own it ourselves. And we're not down today. It was not a major
+57:44
+crisis when AWS was uh was down. And now we can nuke it. So, let's do it.
+57:50
+Ready? Let's push delete. They literally are deleting their AWS
+57:56
+instance. That is such good TV. year.
+58:01
+He shared the table of how much he spent year after year on cloud computing and he estimated that they are probably
+58:07
+saving like he said a million or two million a year who knows let's just say if they're saving a million dollars a year over 10 years it's $10 million to
+58:13
+the bottom line. It does add complexity. So um there is a back and forth that all
+58:20
+founders go through. Should we stand up infrastructure? Should we use other people's infrastructure? you can go
+58:25
+faster when you use other people's infrastructure because you don't have to take on that responsibility and build out the team
+58:31
+when you do have unlimited resources and uh you know the the great example of this would be Elon with X AI and Elon
+58:38
+knows more about factories and physical production of items than anybody on the
+58:43
+planet with the possible exception or you know co-leader of
+58:48
+flexport maybe right or not flexport um is it yeah flexport produces Ryan Ryan Peterson No, no, that's
+58:55
+Flexport. Uh, Flextronics, are they the ones who the iPhone goes they they
+59:00
+subcontract to? Anyway, there's China Singaporean American multinational manufacturing company that does end to
+59:06
+end advanced manufacturing. Flex. Yes, Flextronics. So, Flextronics are the people who build the iPhones.
+59:11
+They're based in Singapore like some companies like Tik Tok are based in Singapore, but they're Chinese
+59:17
+companies, you know. But if you look at this chart, um they have their AWS and
+59:22
+Google bill and the total and you know at their peak they're spending 3.4 million in 2019. The total they spent uh
+59:31
+between AWS and Google from 2017 to 2025, $21 million. And so there you have it,
+59:38
+folks. Uh you could potentially uh save a lot of money doing this, but you will be slowed down. So you got to be
+59:45
+thoughtful about it. that extra million dollars they spent a year, let's say, probably well worth it if you're
+59:51
+building, you know, I think they probably have 30, 40, $50 million in revenue, uh, 37 signals. So, if they got
+59:57
+50 billion in revenue, you don't sweat the million dollars in expense if you're trying to go fast and you got competitors. However, at some point, you
+1:00:04
+may want to look at it and optimize. This is why Oracle is being so aggressive. Oracle is going to people
+1:00:09
+saying, "Give us your cloud bill. Whatever your cloud bill is, we're going to cut it in half." Um, and so I just I
+1:00:15
+know some of the people at Oracle and they are aggressively like Google Cloud
+1:00:21
+and Azure were very aggressive last couple years trying to increase their growth rate when compared to AWS.
+1:00:27
+All of them are growing. They're all incredible businesses. Well, because that's because the cloud is just doing insanely awesome things. I
+1:00:32
+mean, dear God, can you imagine? I What happened when AWS region went down? The entire world ground to a halt. That's
+1:00:38
+how much we depend on these guys. And that's when you can be multiloud. you know, you can just go multicloud at some point um and uh distributed cloud
+1:00:46
+and you can move from one to the other. You can use your own internal infrastructure for some things that are cheaper
+1:00:52
+and you can have hybrid cloud, right? So there there's a lot of options here. Very important for founders I think to
+1:00:57
+not take this on early. I don't think it's an advantage in the first three or four years at all. I think it's a huge
+1:01:02
+advantage to use cloud providers obviously. Another amazing episode of this week in startups is in the can.
+1:01:09
+We'll see you all on Monday. Okay. Bye-bye.
+
