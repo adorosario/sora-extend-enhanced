@@ -5,6 +5,14 @@ Extends OpenAI's Sora 2 video generation beyond 12 seconds by chaining multiple 
 with intelligent planning and continuity.
 """
 
+import sys
+from pathlib import Path
+
+# Add src directory to path if running as a script
+script_dir = Path(__file__).resolve().parent
+if str(script_dir) not in sys.path:
+    sys.path.insert(0, str(script_dir))
+
 import os
 import re
 import json
@@ -20,6 +28,19 @@ import cv2
 from moviepy import VideoFileClip, concatenate_videoclips
 from openai import OpenAI
 from dotenv import load_dotenv
+
+# Voiceover components (optional)
+try:
+    # Try relative import first (when running as module)
+    from voiceover_orchestrator import VoiceoverOrchestrator
+    VOICEOVER_AVAILABLE = True
+except ImportError:
+    try:
+        # Fall back to absolute import (when running from parent directory)
+        from src.voiceover_orchestrator import VoiceoverOrchestrator
+        VOICEOVER_AVAILABLE = True
+    except ImportError:
+        VOICEOVER_AVAILABLE = False
 
 
 def retry_with_backoff(max_retries=5, initial_delay=2, backoff_factor=2, retryable_status_codes=(500, 502, 503, 504, 429)):
@@ -196,6 +217,20 @@ Examples:
         help='Show configuration without generating videos'
     )
 
+    # Voiceover Options
+    voiceover_group = parser.add_argument_group('Voiceover Options')
+    voiceover_group.add_argument(
+        '--enable-voiceover',
+        action='store_true',
+        help='Enable voiceover overlay using ElevenLabs (requires ELEVENLABS_API_KEY and ELEVENLABS_VOICE_ID in .env)'
+    )
+
+    voiceover_group.add_argument(
+        '--voiceover-text',
+        dest='voiceover_text',
+        help='Custom text for voiceover (default: uses base prompt)'
+    )
+
     return parser.parse_args()
 
 
@@ -308,6 +343,43 @@ class SoraExtender:
         self.out_dir = Path(output_dir)
         self.out_dir.mkdir(parents=True, exist_ok=True)
 
+        # Voiceover Configuration (optional)
+        self.enable_voiceover = args.enable_voiceover if args else False
+        self.voiceover_text = None
+        self.voiceover_orchestrator = None
+
+        if self.enable_voiceover:
+            if not VOICEOVER_AVAILABLE:
+                raise RuntimeError(
+                    "Voiceover components not available. "
+                    "Ensure voiceover_orchestrator.py is in src/ directory."
+                )
+
+            # Get ElevenLabs credentials
+            elevenlabs_api_key = get_config_value(
+                None,  # No CLI arg for API key (use .env)
+                "ELEVENLABS_API_KEY",
+                required=True
+            )
+            elevenlabs_voice_id = get_config_value(
+                None,  # No CLI arg for voice ID (use .env)
+                "ELEVENLABS_VOICE_ID",
+                required=True
+            )
+
+            # Get voiceover text (default to base prompt)
+            self.voiceover_text = get_config_value(
+                args.voiceover_text if args else None,
+                "VOICEOVER_TEXT",
+                default=self.base_prompt
+            )
+
+            # Initialize orchestrator
+            self.voiceover_orchestrator = VoiceoverOrchestrator(
+                api_key=elevenlabs_api_key,
+                voice_id=elevenlabs_voice_id
+            )
+
         print(f"Initialized Sora Extender:")
         print(f"  - Planner Model: {self.planner_model}")
         print(f"  - Sora Model: {self.sora_model}")
@@ -316,6 +388,9 @@ class SoraExtender:
         print(f"  - Number of Segments: {self.num_generations}")
         print(f"  - Output Directory: {self.out_dir}")
         print(f"  - Base Prompt: {self.base_prompt}")
+        if self.enable_voiceover:
+            print(f"  - Voiceover: ENABLED")
+            print(f"  - Voiceover Text: {self.voiceover_text[:50]}...")
         print()
 
     @property
@@ -747,6 +822,30 @@ Return exactly {self.num_generations} segments.
         final_path = self.out_dir / "combined.mp4"
         self.concatenate_segments(segment_paths, final_path)
 
+        # Step 4 (Optional): Overlay voiceover
+        if self.enable_voiceover:
+            print("\nSTEP 4: Overlaying voiceover")
+            print("-"*70)
+            print(f"Generating voiceover from text: {self.voiceover_text[:80]}...")
+
+            voiceover_path = self.out_dir / "combined_with_voiceover.mp4"
+
+            try:
+                self.voiceover_orchestrator.process(
+                    video_path=str(final_path),
+                    text=self.voiceover_text,
+                    output_path=str(voiceover_path)
+                )
+                print(f"Voiceover overlay complete: {voiceover_path}")
+
+                # Update final path to the voiceover version
+                final_path = voiceover_path
+
+            except Exception as e:
+                print(f"⚠️  Voiceover overlay failed: {e}")
+                print(f"   Continuing with original video without voiceover.")
+                # Keep original final_path
+
         # Done!
         print(f"\n{'='*70}")
         print("COMPLETE!")
@@ -754,6 +853,8 @@ Return exactly {self.num_generations} segments.
         print(f"Final video: {final_path}")
         print(f"Total duration: {self.seconds_per_segment * self.num_generations} seconds")
         print(f"Number of segments: {len(segment_paths)}")
+        if self.enable_voiceover:
+            print(f"Voiceover: {'ENABLED' if str(final_path).endswith('_with_voiceover.mp4') else 'FAILED (using original)'}")
         print(f"Output directory: {self.out_dir}")
         print(f"{'='*70}\n")
 
