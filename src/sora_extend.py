@@ -17,10 +17,12 @@ import os
 import re
 import json
 import time
+import uuid
+import datetime
 import mimetypes
 import argparse
 from pathlib import Path
-from typing import Optional, List, Dict
+from typing import Optional, List, Dict, Union
 from functools import wraps
 
 import requests
@@ -217,6 +219,42 @@ Examples:
         help='Show configuration without generating videos'
     )
 
+    advanced_group.add_argument(
+        '--enable-parallel',
+        dest='enable_parallel',
+        action='store_true',
+        help='Enable parallel job submission and concurrent polling (recommended for reliability)'
+    )
+
+    advanced_group.add_argument(
+        '--legacy-mode',
+        dest='legacy_mode',
+        action='store_true',
+        help='Use legacy serial generation (for comparison/fallback)'
+    )
+
+    advanced_group.add_argument(
+        '--enable-checkpoint',
+        dest='enable_checkpoint',
+        action='store_true',
+        help='Enable checkpointing to resume from failures (recommended)'
+    )
+
+    advanced_group.add_argument(
+        '--resume',
+        dest='resume_from_checkpoint',
+        action='store_true',
+        help='Resume from previous checkpoint if available'
+    )
+
+    advanced_group.add_argument(
+        '--max-wait-hours',
+        dest='max_wait_hours',
+        type=float,
+        default=3.0,
+        help='Maximum hours to wait for parallel jobs to complete (default: 3.0)'
+    )
+
     # Voiceover Options
     voiceover_group = parser.add_argument_group('Voiceover Options')
     voiceover_group.add_argument(
@@ -380,6 +418,26 @@ class SoraExtender:
                 voice_id=elevenlabs_voice_id
             )
 
+        # Parallel Generation Configuration
+        self.enable_parallel = getattr(args, 'enable_parallel', False) if args else False
+        self.legacy_mode = getattr(args, 'legacy_mode', False) if args else False
+        self.enable_checkpoint = getattr(args, 'enable_checkpoint', False) if args else False
+        self.resume_from_checkpoint = getattr(args, 'resume_from_checkpoint', False) if args else False
+        self.max_wait_hours = getattr(args, 'max_wait_hours', 3.0) if args else 3.0
+
+        # Auto-enable checkpoint when resume is requested
+        if self.resume_from_checkpoint:
+            self.enable_checkpoint = True
+
+        # Conflict resolution: legacy_mode overrides enable_parallel
+        if self.legacy_mode and self.enable_parallel:
+            print("⚠️  Warning: Both --legacy-mode and --enable-parallel specified. Using --legacy-mode.")
+            self.enable_parallel = False
+
+        # Generate unique run ID for checkpointing and idempotency
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.run_id = f"{timestamp}_{str(uuid.uuid4())[:8]}"
+
         print(f"Initialized Sora Extender:")
         print(f"  - Planner Model: {self.planner_model}")
         print(f"  - Sora Model: {self.sora_model}")
@@ -388,6 +446,11 @@ class SoraExtender:
         print(f"  - Number of Segments: {self.num_generations}")
         print(f"  - Output Directory: {self.out_dir}")
         print(f"  - Base Prompt: {self.base_prompt}")
+        print(f"  - Generation Mode: {'PARALLEL' if self.enable_parallel else 'SERIAL (Legacy)'}")
+        if self.enable_checkpoint:
+            print(f"  - Checkpointing: ENABLED")
+        if self.resume_from_checkpoint:
+            print(f"  - Resume: Will attempt to resume from checkpoint")
         if self.enable_voiceover:
             print(f"  - Voiceover: ENABLED")
             print(f"  - Voiceover Text: {self.voiceover_text[:50]}...")
@@ -588,7 +651,8 @@ Return exactly {self.num_generations} segments.
             )
 
         url = f"{self.api_base}/videos"
-        resp = requests.post(url, headers=self.headers_auth, files=files, timeout=300)
+        # Phase 5: Reduce timeout - job creation should be instant
+        resp = requests.post(url, headers=self.headers_auth, files=files, timeout=30)
 
         if resp.status_code >= 400:
             raise RuntimeError(f"Create video failed:\n{self._dump_error(resp)}")
@@ -599,7 +663,8 @@ Return exactly {self.num_generations} segments.
     def retrieve_video(self, video_id: str) -> Dict:
         """Retrieve video job status with automatic retries on server errors."""
         url = f"{self.api_base}/videos/{video_id}"
-        resp = requests.get(url, headers=self.headers_auth, timeout=60)
+        # Phase 5: Reduce timeout - status polling is lightweight
+        resp = requests.get(url, headers=self.headers_auth, timeout=30)
 
         if resp.status_code >= 400:
             raise RuntimeError(f"Retrieve video failed:\n{self._dump_error(resp)}")
@@ -617,12 +682,13 @@ Return exactly {self.num_generations} segments.
         url = f"{self.api_base}/videos/{video_id}/content"
         params = {"variant": variant}
 
+        # Phase 5: Reduce timeout for downloads, add streaming
         with requests.get(
             url,
             headers=self.headers_auth,
             params=params,
             stream=True,
-            timeout=600,
+            timeout=300,  # 5 minutes for download
         ) as resp:
             if resp.status_code >= 400:
                 raise RuntimeError(f"Download failed:\n{self._dump_error(resp)}")
@@ -714,6 +780,362 @@ Return exactly {self.num_generations} segments.
             raise RuntimeError(f"Failed to write {out_image_path}")
 
         return out_image_path
+
+    # =========================================================================
+    # PHASE 3: Checkpointing & Recovery
+    # =========================================================================
+
+    def get_checkpoint_path(self) -> Path:
+        """Get path to checkpoint file for current run."""
+        return self.out_dir / "checkpoint.json"
+
+    def save_checkpoint(self, segment_num: int, video_path: Path, job_info: Dict):
+        """Save progress after each successful segment.
+
+        Args:
+            segment_num: Segment number (1-indexed)
+            video_path: Path to downloaded video file
+            job_info: Job information dictionary from API
+        """
+        if not self.enable_checkpoint:
+            return
+
+        checkpoint_file = self.get_checkpoint_path()
+
+        # Load existing checkpoint if any
+        checkpoint = {}
+        if checkpoint_file.exists():
+            try:
+                checkpoint = json.loads(checkpoint_file.read_text())
+            except json.JSONDecodeError:
+                print(f"⚠️  Warning: Corrupted checkpoint file, starting fresh")
+                checkpoint = {}
+
+        # Add this segment
+        checkpoint[f"segment_{segment_num:02d}"] = {
+            "video_path": str(video_path),
+            "job_id": job_info.get("id"),
+            "completed_at": time.time(),
+            "status": job_info.get("status")
+        }
+
+        # Save atomically (write to temp, then rename)
+        temp_file = checkpoint_file.with_suffix(".json.tmp")
+        temp_file.write_text(json.dumps(checkpoint, indent=2))
+        temp_file.replace(checkpoint_file)
+
+    def load_checkpoint(self) -> Dict:
+        """Load previous checkpoint if exists.
+
+        Returns:
+            Dictionary mapping segment keys to their info
+        """
+        checkpoint_file = self.get_checkpoint_path()
+        if checkpoint_file.exists():
+            try:
+                return json.loads(checkpoint_file.read_text())
+            except json.JSONDecodeError:
+                print(f"⚠️  Warning: Corrupted checkpoint file")
+                return {}
+        return {}
+
+    def resume_from_checkpoint_helper(
+        self,
+        segments: List[Dict]
+    ) -> tuple[List[Dict], List[Path]]:
+        """Resume from checkpoint, returning remaining segments and completed paths.
+
+        Args:
+            segments: Full list of planned segments
+
+        Returns:
+            Tuple of (remaining_segments, completed_paths)
+        """
+        checkpoint = self.load_checkpoint()
+
+        if not checkpoint:
+            return segments, []
+
+        completed_segments = []
+        remaining_segments = []
+
+        print(f"\n{'='*70}")
+        print("RESUMING FROM CHECKPOINT")
+        print(f"{'='*70}")
+
+        for i, seg in enumerate(segments, start=1):
+            key = f"segment_{i:02d}"
+            if key in checkpoint:
+                path = Path(checkpoint[key]["video_path"])
+                if path.exists():
+                    completed_segments.append(path)
+                    print(f"✓ Segment {i}/{len(segments)} already completed: {path.name}")
+                else:
+                    print(f"⚠️  Segment {i} in checkpoint but file missing, will regenerate")
+                    remaining_segments.append(seg)
+            else:
+                remaining_segments.append(seg)
+
+        print(f"\nProgress: {len(completed_segments)}/{len(segments)} segments complete")
+        print(f"Will generate {len(remaining_segments)} remaining segments")
+        print(f"{'='*70}\n")
+
+        return remaining_segments, completed_segments
+
+    # =========================================================================
+    # PHASE 1: Parallel Job Submission
+    # =========================================================================
+
+    def get_rate_limit_delay(self) -> float:
+        """Get appropriate rate limit delay based on Sora model.
+
+        Returns:
+            Delay in seconds between API calls
+        """
+        if self.sora_model == "sora-2-pro":
+            # 150 RPM = 2.5 requests/second, use 0.4s to be safe
+            return 0.4
+        else:
+            # sora-2: 375 RPM = 6.25 requests/second, use 0.2s to be safe
+            return 0.2
+
+    def submit_all_jobs(
+        self,
+        segments: List[Dict],
+        start_offset: int = 0
+    ) -> List[Dict]:
+        """Submit all segment generation jobs in parallel (respecting rate limits).
+
+        Args:
+            segments: List of segment dictionaries to generate
+            start_offset: Starting segment number (for resume functionality)
+
+        Returns:
+            List of job dictionaries with metadata
+        """
+        print(f"\n{'='*70}")
+        print(f"SUBMITTING {len(segments)} JOBS IN PARALLEL")
+        print(f"{'='*70}\n")
+
+        jobs = []
+        rate_limit_delay = self.get_rate_limit_delay()
+
+        for i, seg in enumerate(segments, start=1):
+            segment_num = start_offset + i
+            seconds = int(seg["seconds"])
+            prompt = seg["prompt"]
+            title = seg.get("title", f"Segment {segment_num}")
+
+            # Generate idempotency key
+            client_id = f"{self.run_id}_segment_{segment_num:02d}"
+
+            print(f"Submitting segment {segment_num} ({seconds}s): {title}")
+
+            # Note: input_reference is not used in parallel mode (see issue notes)
+            # We submit all jobs at once without frame continuity
+            job = self.create_video(
+                prompt=prompt,
+                seconds=seconds,
+                input_reference=None  # Parallel mode: no inter-segment continuity
+            )
+
+            jobs.append({
+                "segment_num": segment_num,
+                "job_id": job["id"],
+                "client_id": client_id,
+                "status": job["status"],
+                "title": title,
+                "prompt": prompt
+            })
+
+            print(f"  ✓ Job {job['id']} submitted (status: {job['status']})")
+
+            # Rate limiting: avoid hitting API limits
+            if i < len(segments):  # Don't sleep after last job
+                time.sleep(rate_limit_delay)
+
+        print(f"\n✓ All {len(jobs)} jobs submitted successfully")
+        return jobs
+
+    # =========================================================================
+    # PHASE 2: Concurrent Polling with Immediate Downloads
+    # =========================================================================
+
+    def poll_and_download_all(
+        self,
+        jobs: List[Dict]
+    ) -> List[Path]:
+        """Poll all jobs concurrently and download each immediately when ready.
+
+        Args:
+            jobs: List of job dictionaries from submit_all_jobs()
+
+        Returns:
+            List of paths to downloaded segments (in order)
+
+        Raises:
+            TimeoutError: If jobs exceed max_wait_hours limit
+            RuntimeError: If all segments fail to generate
+        """
+        print(f"\n{'='*70}")
+        print(f"POLLING {len(jobs)} JOBS CONCURRENTLY")
+        print(f"{'='*70}\n")
+
+        start_time = time.time()
+        pending_jobs = jobs.copy()
+        completed_paths = [None] * len(jobs)  # Maintain segment order
+        failed_jobs = []
+
+        backoff_multiplier = 1
+
+        while pending_jobs:
+            # Check timeout
+            elapsed_hours = (time.time() - start_time) / 3600
+            if elapsed_hours > self.max_wait_hours:
+                failed = [j["segment_num"] for j in pending_jobs]
+                raise TimeoutError(
+                    f"Jobs exceeded {self.max_wait_hours}h limit. "
+                    f"Completed: {len(jobs) - len(pending_jobs)}/{len(jobs)}. "
+                    f"Failed segments: {failed}"
+                )
+
+            # Poll each pending job
+            for job in pending_jobs[:]:  # Copy to allow removal during iteration
+                try:
+                    status = self.retrieve_video(job["job_id"])
+
+                    if status["status"] == "completed":
+                        # Download immediately to avoid link expiration
+                        seg_num = job["segment_num"]
+                        seg_path = self.out_dir / f"segment_{seg_num:02d}.mp4"
+
+                        # Phase 4: Link expiration recovery wrapper
+                        self.download_video_content_safe(
+                            video_id=status["id"],
+                            out_path=seg_path,
+                            variant="video"
+                        )
+
+                        # Save checkpoint
+                        self.save_checkpoint(seg_num, seg_path, status)
+
+                        # Mark as complete
+                        completed_paths[seg_num - 1] = seg_path
+                        pending_jobs.remove(job)
+
+                        print(f"✓ Segment {seg_num}/{len(jobs)} completed and downloaded: {seg_path.name}")
+
+                        # Reset backoff on success
+                        backoff_multiplier = 1
+
+                    elif status["status"] == "failed":
+                        error = status.get("error", {}).get("message", "Unknown error")
+                        print(f"✗ Segment {job['segment_num']} failed: {error}")
+                        failed_jobs.append(job)
+                        pending_jobs.remove(job)
+                        # Continue with other segments (graceful degradation)
+
+                    elif status["status"] in ("queued", "in_progress"):
+                        # Still processing, show progress
+                        pct = float(status.get("progress", 0) or 0)
+                        status_text = "Queued" if status["status"] == "queued" else "Processing"
+                        print(f"  Segment {job['segment_num']}: {status_text} ({pct:.1f}%)")
+
+                except Exception as e:
+                    print(f"⚠️  Error polling segment {job['segment_num']}: {e}")
+                    # Don't remove from pending - will retry on next iteration
+
+            # Progress update
+            completed = len(jobs) - len(pending_jobs) - len(failed_jobs)
+            print(f"\rProgress: {completed}/{len(jobs)} segments complete, "
+                  f"{len(pending_jobs)} in progress, {len(failed_jobs)} failed",
+                  end="", flush=True)
+            print()  # Newline for next iteration
+
+            # Exponential backoff polling
+            # Start with poll_interval, increase as jobs near completion
+            completed_ratio = completed / len(jobs) if jobs else 0
+            backoff_multiplier = min(1 + (completed_ratio * 2), 3)  # Max 3x backoff
+            sleep_time = self.poll_interval * backoff_multiplier
+            time.sleep(sleep_time)
+
+        print(f"\n{'='*70}")
+        print(f"POLLING COMPLETE")
+        print(f"{'='*70}")
+        print(f"✓ Completed: {len([p for p in completed_paths if p])}/{len(jobs)}")
+        if failed_jobs:
+            print(f"✗ Failed: {len(failed_jobs)} segments")
+            for job in failed_jobs:
+                print(f"  - Segment {job['segment_num']}: {job['title']}")
+
+        # Filter out failed segments
+        completed_paths = [p for p in completed_paths if p is not None]
+
+        if not completed_paths:
+            raise RuntimeError("All segments failed to generate")
+
+        return completed_paths
+
+    # =========================================================================
+    # PHASE 4: Download Link Expiration Recovery
+    # =========================================================================
+
+    def download_video_content_safe(
+        self,
+        video_id: str,
+        out_path: Path,
+        variant: str = "video"
+    ) -> Path:
+        """Download with automatic link refresh on expiration.
+
+        Args:
+            video_id: Video job ID
+            out_path: Output path for video file
+            variant: Variant type (default: "video")
+
+        Returns:
+            Path to downloaded file
+
+        Raises:
+            RuntimeError: If download fails after retries
+        """
+        max_retries = 3
+
+        for attempt in range(max_retries):
+            try:
+                return self.download_video_content(video_id, out_path, variant)
+            except RuntimeError as e:
+                error_msg = str(e).lower()
+
+                # Check for expiration indicators
+                is_expired = any(x in error_msg for x in [
+                    "expired", "404", "not found", "forbidden", "403"
+                ])
+
+                if is_expired and attempt < max_retries - 1:
+                    print(f"⚠️  Download link expired (attempt {attempt + 1}/{max_retries}), "
+                          f"fetching fresh link...")
+
+                    # Retrieve job again to get fresh download URL
+                    fresh_job = self.retrieve_video(video_id)
+
+                    if fresh_job["status"] != "completed":
+                        raise RuntimeError(
+                            f"Job {video_id} no longer completed: {fresh_job['status']}"
+                        )
+
+                    # Retry with exponential backoff
+                    time.sleep(2 ** attempt)
+                    continue
+
+                # Not an expiration error or out of retries
+                raise
+
+        raise RuntimeError(f"Failed to download video {video_id} after {max_retries} attempts")
+
+    # =========================================================================
+    # Legacy Serial Generation (Original Implementation)
+    # =========================================================================
 
     def chain_generate_sora(self, segments: List[Dict]) -> List[Path]:
         """
@@ -814,7 +1236,36 @@ Return exactly {self.num_generations} segments.
         # Step 2: Generate segments with Sora
         print("\nSTEP 2: Generating video segments with Sora")
         print("-"*70)
-        segment_paths = self.chain_generate_sora(segments)
+
+        # Choose generation strategy based on flags
+        if self.enable_parallel:
+            # PARALLEL MODE: Phases 1-4
+            # Check for checkpoint resume
+            if self.resume_from_checkpoint:
+                remaining_segments, completed_paths = self.resume_from_checkpoint_helper(segments)
+            else:
+                remaining_segments = segments
+                completed_paths = []
+
+            # Only submit jobs for remaining segments
+            if remaining_segments:
+                # Calculate offset for segment numbering
+                start_offset = len(completed_paths)
+
+                # Phase 1: Submit all jobs in parallel
+                jobs = self.submit_all_jobs(remaining_segments, start_offset=start_offset)
+
+                # Phase 2: Poll concurrently and download immediately
+                new_paths = self.poll_and_download_all(jobs)
+                completed_paths.extend(new_paths)
+
+            segment_paths = completed_paths
+
+        else:
+            # LEGACY MODE: Serial generation (original implementation)
+            if self.legacy_mode:
+                print("⚠️  Using LEGACY serial generation mode")
+            segment_paths = self.chain_generate_sora(segments)
 
         # Step 3: Concatenate segments
         print("\nSTEP 3: Concatenating segments")
