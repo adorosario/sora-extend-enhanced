@@ -23,6 +23,10 @@ COPY src/ ./src/
 # Copy tests
 COPY tests/ ./tests/
 
+# Copy prompts and test data
+COPY prompts/ ./prompts/
+COPY test_posts/ ./test_posts/
+
 # Create output directory
 RUN mkdir -p /app/output
 

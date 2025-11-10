@@ -1,0 +1,13 @@
+This is one of my favorite Steve Jobs videos of all time: Why the Japanese never talk about QUALITY. 
+
+As an AI builder, some of the things we do (and spend tons of effort on) can't be talked about and shown visibly. 
+
+For example: Our engineering team worked super hard to bring down the speed of responses to super-fast, sub-second levels -- now how do I talk about that or show it? 
+
+Over the last few weeks, I have been working super hard to benchmark our RAG system against OpenAI using a new QUALITY metric OpenAI defined (it combines accuracy + hallucination to give a SAT-style score) -- this is painstaking work and does not show up in fancy marketing graphics .... but our customers notice it. 
+
+If you are an engineer working on cool stuff, you *need* to have some of these *self belief* type metrics to motivate yourself (even if your boss - or the world - does not openly applaud you!) 
+
+Keep building, my friends! 
+
+https://www.youtube.com/watch?v=kib6uXQsxBA

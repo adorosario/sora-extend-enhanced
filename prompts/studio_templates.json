@@ -1,0 +1,26 @@
+{
+  "classic_studio": {
+    "name": "Classic Studio",
+    "description": "Warm, professional podcast studio with vintage aesthetic. Best for: leadership, wisdom, quality, timeless topics.",
+    "themes": ["leadership", "quality", "wisdom", "experience", "principles", "values"],
+    "prompt": "Professional business presenter discussing {topic} in a classic podcast studio. Medium shot of a confident, well-dressed professional speaking to camera with thoughtful expression and natural hand gestures. Warm amber lighting, vintage microphone on boom arm, blurred bookshelf background with leather-bound books. Person engaged in conversation, emphasizing key points about {topic}. Cozy professional atmosphere, 4K, film grain."
+  },
+  "modern_studio": {
+    "name": "Modern Studio",
+    "description": "Sleek, tech-forward podcast studio with contemporary design. Best for: innovation, technology, future, startups, digital topics.",
+    "themes": ["technology", "innovation", "future", "startup", "digital", "ai", "software", "product"],
+    "prompt": "Tech-savvy professional presenter discussing {topic} in a modern podcast studio. Medium shot of an engaged speaker with contemporary style, explaining innovative concepts with dynamic hand gestures. Cool blue LED accent lighting, minimalist glass desk, sleek microphone setup. Person animated and passionate about {topic}, forward-thinking atmosphere. Clean lines, 4K, crisp and sharp."
+  },
+  "intimate_studio": {
+    "name": "Intimate Studio",
+    "description": "Warm, personal podcast studio with close-up details. Best for: personal stories, reflection, career journeys, lessons learned.",
+    "themes": ["personal", "story", "journey", "reflection", "career", "lesson", "challenge", "growth"],
+    "prompt": "Warm, authentic presenter sharing personal insights about {topic} in an intimate podcast studio. Close-up shot of a genuine, relatable speaker with sincere expression, speaking from the heart. Soft natural window light, comfortable setting, coffee cup nearby. Person reflecting thoughtfully on {topic}, creating connection with audience. Golden hour lighting, soft focus, 4K."
+  },
+  "energetic_studio": {
+    "name": "Energetic Studio",
+    "description": "Dynamic, high-energy podcast studio with movement. Best for: motivation, inspiration, action-oriented topics, calls to action.",
+    "themes": ["motivation", "inspiration", "action", "energy", "momentum", "hustle", "success", "win"],
+    "prompt": "Dynamic, energetic presenter delivering powerful message about {topic} in a modern podcast studio. Medium-to-close shot of an enthusiastic speaker with strong, motivational presence and confident body language. Dramatic lighting with warm and cool contrasts, dynamic camera movement. Person passionately emphasizing action points about {topic}, creating urgency and excitement. High energy, 4K, vibrant colors."
+  }
+}

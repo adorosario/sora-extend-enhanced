@@ -1,0 +1,17 @@
+OK -- so here is the goal at hand .. I want to make long-form UGC videos based on my Linkedin posts. So basically a "post to video" 
+
+For example: I wrote this thought-leadership Linkedin post like https://www.linkedin.com/posts/aldendorosario_steve-jobs-on-quality-activity-7392598465303924736-fqXf
+
+2. I want to include Sora-generated footage as if I am talking in a podcast studio like this studio: https://lh3.googleusercontent.com/p/AF1QipNZRjLWTWJP2XqkCpW4rkyuZw-EqFaV-Zu9MQ3c=s1360-w1360-h1020-rw
+
+what could the strategy be for something like this? Does Sora support using my face? If so, how can we make this super professional and consistent based on the content of the Linkedin post? 
+
+Please be adviced: 
+1. The linkedin post can change from week to week -- so our strategy should be dynamic. 
+
+2. The clips should be consistent (using the extension strategy we have) 
+
+ultrathink about this. Use your MCP Websearch to get latest information on the Sora API. if I provide you headshots of me, can those be used? 
+
+
+
